@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yaswanth & Sandhya Wedding</title>
+<meta name="description" content="Yaswanth weds Sandhya · Ananthapuramu. Tap the seal to open the invitation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yaswanth & Sandhya Wedding Invitation">
+<meta property="og:description" content="Tap the seal to open, then scratch to reveal the date.">
+<meta property="og:url" content="https://yaswanth-weds-sandhya.online/blush/">
+<meta property="og:image" content="https://yaswanth-weds-sandhya.online/blush/preview.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3d6cd">
+<style>
+/* Layout: one phone-width column (1rem = 1/108 of it, shrunk on short screens) of screen-tall cards that snap.
+   An embossed blush envelope with a copper wax seal opens onto a palace-arch hero; a dark band hides the date under three copper foils. */
+:root{
+  --desk:#1d1418; --blush:#f3d6cd; --peach:#f8e1d3; --rose:#9b5d52; --rose-l:#c08e83; --ink:#5f3c35; --soft:#8b6a61;
+  --plum:#281c22; --plum-l:#3d2a33; --cream:#fff3e6; --cream-s:rgba(255,243,230,.7);
+  --cu-hi:#ffe0b3; --cu:#e48a3c; --cu-d:#a8541b;
+  --fc:'Cinzel',Georgia,serif; --fs:'Cormorant Garamond',Georgia,serif; --fp:'Playfair Display',Georgia,serif; --fd:'Great Vibes',cursive; --ft:'Mallanna','Noto Sans Telugu',sans-serif;
+  --emboss:none;
+}
+html{font-size:min(calc(min(100vw,560px)/108),calc(100vh/196));font-size:min(calc(min(100vw,560px)/108),calc(100svh/196));background:var(--desk);color-scheme:light;scroll-snap-type:y mandatory;scrollbar-width:none}
+html::-webkit-scrollbar{display:none}
+html.render{font-size:10px;overflow:hidden;scroll-snap-type:none}
+html.render *,html.render *::before,html.render *::after{animation:none!important;transition:none!important}
+html.locked,html.locked body{overflow:hidden;height:100%}
+html.gate .gated{display:none}
+[hidden]{display:none!important}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--fs);font-size:3.6rem;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:0;transition:opacity .5s}
+html.loaded body{opacity:1}
+main{width:108rem;margin:0 auto;position:relative;background:var(--peach);box-shadow:0 0 9rem rgba(0,0,0,.45)}
+html.render main{position:fixed;top:0;left:0;right:0;will-change:transform}
+section{height:100vh;height:100svh;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2.4rem;padding-block:10rem;padding-left:max(16px,env(safe-area-inset-left,0px),9rem);padding-right:max(16px,env(safe-area-inset-right,0px),9rem)}
+h1,h2,h3,p{margin:0;font-weight:400;text-wrap:balance}
+p{max-width:84rem}
+.light{background:var(--emboss) center top/108rem auto repeat-y,var(--blush)}
+.peach{background:var(--emboss) center top/108rem auto repeat-y,var(--peach)}
+.dark{background:radial-gradient(ellipse at 50% 35%,var(--plum-l),var(--plum) 72%);color:var(--cream)}
+.cap{font-family:var(--fc);text-transform:uppercase;letter-spacing:.26em;font-size:2.5rem;line-height:1.6;color:var(--soft)}
+.dark .cap{color:var(--cream-s)}
+.title{font-family:var(--fc);font-weight:400;text-transform:uppercase;letter-spacing:.09em;font-size:5.8rem;line-height:1.18;color:var(--rose)}
+.disp{font-family:var(--fp);font-style:italic;font-weight:400}
+.te{font-family:var(--ft);font-size:3.2rem;line-height:1.5;color:var(--soft)}
+.dark .te{color:var(--cream-s)}
+.ital{font-style:italic;color:var(--soft)}
+.small{font-size:3.1rem}
+.art{background:var(--rose);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;flex:none}
+.rule{width:36rem;height:1px;background:linear-gradient(90deg,transparent,var(--rose-l),transparent);position:relative;flex:none;margin-block:1rem}
+.rule::after{content:"";position:absolute;left:50%;top:50%;width:1.1rem;height:1.1rem;background:var(--rose-l);transform:translate(-50%,-50%) rotate(45deg)}
+.dark .rule{background:linear-gradient(90deg,transparent,rgba(255,224,179,.6),transparent)}.dark .rule::after{background:var(--cu)}
+.btn{display:inline-flex;align-items:center;gap:1.3rem;background:linear-gradient(180deg,#eea05a,#cf7432);color:#fff8ef;font-family:var(--fc);font-size:2.5rem;letter-spacing:.2em;text-transform:uppercase;padding:2.2rem 4.4rem;border-radius:999px;text-decoration:none;box-shadow:0 1rem 2.4rem rgba(120,50,10,.3),inset 0 1px 0 rgba(255,255,255,.4);border:0;cursor:pointer}
+.btn.plum{background:var(--plum);box-shadow:0 1rem 2.4rem rgba(40,28,34,.3)}
+.btn svg{width:2.7rem;height:2.7rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn:focus-visible,#snd:focus-visible,#seal:focus-visible,.coin canvas:focus-visible{outline:.4rem solid var(--cu);outline-offset:.4rem}
+.scroll{display:flex;flex-direction:column;align-items:center;gap:.2rem;font-family:var(--fc);font-size:2.2rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose-l);margin-top:1.6rem}
+.dark .scroll{color:var(--cream-s)}
+.scroll svg{width:3.2rem;height:3.2rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(.9rem)}}
+html.js .rv{opacity:0;transform:translateY(3rem)}
+@media (prefers-reduced-motion:reduce){html.js .rv{transform:none!important}.scroll svg,#seal{animation:none!important}}
+
+/* envelope */
+#env{position:fixed;top:0;bottom:0;left:50%;width:108rem;margin-left:-54rem;z-index:50;overflow:hidden;background:var(--blush);-webkit-tap-highlight-color:transparent;user-select:none}
+#env canvas.paper{position:absolute;left:0;top:0;width:100%;height:100%;display:block}
+#pocket{position:absolute;left:0;right:0;top:0;height:46%;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(180deg,#9c4f17,#d9782a 55%,#f5b04f)}
+#flap{position:absolute;left:0;right:0;top:0;height:46%;transform-origin:50% 0;filter:drop-shadow(0 .5rem .8rem rgba(110,50,40,.3))}
+#flap .face{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%);overflow:hidden}
+#flap .front canvas{position:absolute;left:0;top:0;width:100%;height:calc(100% / .46);display:block}
+#flap .back{background:linear-gradient(0deg,#fbd27c,#f0a13f 45%,#c86a22);visibility:hidden}
+#seal{position:absolute;left:50%;bottom:0;width:36rem;height:36rem;margin-left:-18rem;margin-bottom:-18rem;cursor:pointer;animation:breathe 2.6s ease-in-out infinite;filter:drop-shadow(0 1.2rem 1.6rem rgba(90,35,15,.38))}
+#seal svg{width:100%;height:100%;display:block;overflow:visible}
+@keyframes breathe{50%{transform:scale(1.035)}}
+#env .hint{position:absolute;left:0;right:0;top:calc(46% + 23rem);text-align:center;font-family:var(--fc);font-size:2.5rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose)}
+#env .who{position:absolute;left:0;right:0;bottom:calc(9rem + env(safe-area-inset-bottom,0px));text-align:center;font-family:var(--fc);font-size:2.3rem;letter-spacing:.3em;color:var(--rose-l)}
+#rays,#glow{position:absolute;left:50%;top:46%;pointer-events:none;opacity:0}
+#rays{width:240rem;height:240rem;margin:-120rem 0 0 -120rem;background:repeating-conic-gradient(from 0deg,rgba(255,221,150,0) 0deg 5deg,rgba(255,221,150,.75) 6.5deg 8deg,rgba(255,221,150,0) 9.5deg 15deg);-webkit-mask:radial-gradient(circle,#000 0 8%,rgba(0,0,0,.55) 26%,transparent 58%);mask:radial-gradient(circle,#000 0 8%,rgba(0,0,0,.55) 26%,transparent 58%);mix-blend-mode:screen}
+#glow{width:160rem;height:160rem;margin:-80rem 0 0 -80rem;background:radial-gradient(circle,#fffaf0 0 10%,rgba(255,222,160,.85) 25%,rgba(255,200,120,.35) 45%,transparent 68%)}
+#flash{position:fixed;top:0;bottom:0;left:50%;width:108rem;margin-left:-54rem;z-index:60;background:#fff8ef;opacity:0;pointer-events:none}
+
+/* hero */
+#hero{padding:0}
+#herocv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-text{position:absolute;left:0;right:0;top:0;bottom:80rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;padding-top:27rem}
+.names{font-family:var(--fc);font-weight:400;color:var(--rose);font-size:8.6rem;letter-spacing:.14em;line-height:1.08;display:flex;flex-direction:column;align-items:center;margin-block:1rem}
+.names em{font-family:var(--fp);font-style:italic;font-size:6.6rem;letter-spacing:0;color:var(--cu-d);line-height:1.2}
+.hero-text .cap{color:var(--rose-l)}
+
+/* date reveal */
+.reveal-h{font-size:10rem;line-height:1;color:var(--cream);margin-block:1rem .6rem}
+.discs{display:flex;gap:4.4rem;justify-content:center;margin-top:2rem}
+.disc{display:flex;flex-direction:column;align-items:center;gap:1.8rem}
+.disc>span{font-family:var(--fc);font-size:2.2rem;letter-spacing:.32em;color:var(--cream-s)}
+.coin{position:relative;width:23rem;height:23rem;border-radius:50%;background:radial-gradient(circle at 38% 32%,#f6c08a,#d98745 58%,#a5582a);box-shadow:0 1.6rem 3.2rem rgba(0,0,0,.45),inset 0 0 0 .7rem rgba(255,228,190,.18),inset 0 0 0 .8rem rgba(120,50,15,.25)}
+.coin b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--fp);font-weight:600;font-size:5.8rem;letter-spacing:.02em;color:#fff4e6;text-shadow:0 .2rem .25rem rgba(95,40,10,.55)}
+.coin b.sm{font-size:4.9rem}
+.coin canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;touch-action:none;cursor:pointer;display:block}
+.after{display:flex;flex-direction:column;align-items:center;gap:1.4rem;opacity:0;transform:translateY(2rem);margin-top:2.4rem}
+.after .big{font-family:var(--fp);font-size:4.6rem;color:var(--cream);line-height:1.2}
+.tip{font-family:var(--fs);font-style:italic;font-size:3.1rem;color:var(--cream-s);transition:opacity .4s}
+#confetti{position:fixed;top:0;bottom:0;left:50%;width:108rem;margin-left:-54rem;z-index:40;pointer-events:none;width:108rem;height:100%}
+
+/* couple */
+.person{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.person .full{font-family:var(--fc);font-size:5rem;letter-spacing:.1em;line-height:1.2;color:var(--rose);text-transform:uppercase}
+.person p{font-size:3.4rem;line-height:1.4}
+.amp{font-family:var(--fp);font-style:italic;font-size:7rem;color:var(--cu-d);line-height:1}
+
+/* events */
+.evs{display:flex;flex-direction:column;gap:3.4rem;align-items:center;width:100%}
+.ev{width:76rem;box-sizing:border-box;padding:9rem 5rem 4.4rem;border-radius:38rem 38rem 3rem 3rem;background:rgba(255,250,245,.66);border:1px solid rgba(192,142,131,.5);box-shadow:0 2rem 4rem rgba(120,60,50,.08);display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.ev .art{width:15rem;height:9rem;margin-bottom:.6rem}
+.ev h3{font-family:var(--fc);font-size:3rem;letter-spacing:.2em;color:var(--rose);text-transform:uppercase}
+.ev p{font-size:3.3rem;line-height:1.35}
+
+/* countdown */
+.tiles{display:flex;gap:2.6rem;justify-content:center}
+.tile{display:flex;flex-direction:column;align-items:center;gap:1.6rem}
+.tile .coin{width:18rem;height:18rem}
+.tile .coin b{font-size:5.6rem;font-variant-numeric:tabular-nums}
+.tile span{font-family:var(--fc);font-size:2.1rem;letter-spacing:.3em;color:var(--cream-s)}
+
+/* rsvp */
+.phone{display:flex;flex-direction:column;align-items:center;gap:1.6rem;padding:2.6rem 0;width:100%;max-width:72rem;border-top:1px solid rgba(192,142,131,.45)}
+.phone:last-of-type{border-bottom:1px solid rgba(192,142,131,.45)}
+.phone b{font-family:var(--fp);font-weight:400;font-size:4.6rem;letter-spacing:.06em;color:var(--ink);font-variant-numeric:tabular-nums}
+.phone .row{display:flex;gap:1.8rem;flex-wrap:wrap;justify-content:center}
+.phone .btn{padding:1.7rem 3.4rem;font-size:2.2rem}
+
+#snd{position:fixed;z-index:45;top:calc(2.6rem + env(safe-area-inset-top,0px));right:calc(50% - 54rem + 2.6rem);width:7rem;height:7rem;border-radius:50%;border:1px solid rgba(255,243,230,.45);background:rgba(40,28,34,.82);color:var(--cream);box-shadow:0 .8rem 2rem rgba(0,0,0,.25);cursor:pointer;display:grid;place-items:center}
+#snd svg{width:3.2rem;height:3.2rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#snd .mute{display:none}#snd.off .on{display:none}#snd.off .mute{display:block}
+#fade{position:fixed;inset:0;z-index:70;background:#000;pointer-events:none;opacity:0}
+</style>
+</head>
+<body>
+
+<div id="env">
+  <canvas class="paper" id="envpaper" aria-hidden="true"></canvas>
+  <div id="pocket" aria-hidden="true"></div>
+  <div id="rays" aria-hidden="true"></div><div id="glow" aria-hidden="true"></div>
+  <div id="flap">
+    <div class="face front"><canvas id="flappaper" aria-hidden="true"></canvas></div>
+    <div class="face back"></div>
+    <div id="seal" role="button" tabindex="0" aria-label="Open the invitation"></div>
+  </div>
+  <div class="hint">Tap the seal to open</div>
+  <div class="who">YASWANTH &amp; SANDHYA</div>
+</div>
+<div id="flash" aria-hidden="true"></div>
+
+<button id="snd" class="off" hidden aria-label="Music on or off">
+  <svg class="on" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+  <svg class="mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l4 6M21 9l-4 6"/></svg>
+</button>
+
+<main id="page">
+  <section id="hero">
+    <canvas id="herocv" aria-hidden="true"></canvas>
+    <div class="hero-text">
+      <div class="art rv" style="--m:url(art/ganesha.png);width:8.4rem;height:11rem;background:#b06a52"></div>
+      <p class="te rv">శ్రీరస్తు శుభమస్తు</p>
+      <h1 class="names rv"><span>Yaswanth</span><em>&amp;</em><span>Sandhya</span></h1>
+      <p class="cap rv">Wedding Day</p>
+      <p class="cap rv">· Save the date ·</p>
+      <div class="scroll rv">Scroll<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </div>
+  </section>
+
+  <section id="day" class="light">
+    <span class="cap rv">Together with our families</span>
+    <h2 class="title rv">We're getting<br>married!</h2>
+    <p class="cap rv" style="letter-spacing:.22em">and we can't wait to celebrate with you</p>
+    <div class="rule rv"></div>
+    <span class="cap rv">With the blessings of</span>
+    <p class="rv" style="font-family:var(--fc);font-size:3rem;letter-spacing:.08em;line-height:1.5;color:var(--rose)">Late Smt. Konduru Susheelamma<br>&amp; Late Sri Konduru Gangi Reddy</p>
+    <p class="te rv">కీ.శే. శ్రీమతి కొండూరు సుశీలమ్మ &amp; కీ.శే. శ్రీ కొండూరు గంగిరెడ్డి గార్ల ఆశీస్సులతో</p>
+    <div class="rule rv"></div>
+    <p class="rv">We joyfully invite you and your family to the wedding celebrations of Yaswanth &amp; Sandhya. Your presence and blessings would mean the world to us.</p>
+  </section>
+
+  <section id="reveal" class="dark">
+    <span class="cap rv">Scratch all three circles to continue</span>
+    <h2 class="disp reveal-h rv">Reveal</h2>
+    <span class="cap rv">Scratch to discover the date</span>
+    <div class="discs rv">
+      <div class="disc"><div class="coin"><b>DEC</b><canvas aria-label="Scratch to reveal the month" tabindex="0"></canvas></div><span>Month</span></div>
+      <div class="disc"><div class="coin"><b>13</b><canvas aria-label="Scratch to reveal the day" tabindex="0"></canvas></div><span>Day</span></div>
+      <div class="disc"><div class="coin"><b class="sm">2026</b><canvas aria-label="Scratch to reveal the year" tabindex="0"></canvas></div><span>Year</span></div>
+    </div>
+    <p class="tip" id="tip">Rub each circle with your finger, or tap it</p>
+    <div class="after" id="after">
+      <span class="cap">Sunday · Sumuhurtham</span>
+      <p class="big">10:50 – 11:48 AM</p>
+      <p class="te">ఆదివారం ఉదయం 10:50 నుండి 11:48 లోపు</p>
+      <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Yaswanth+%26+Sandhya+Wedding&amp;dates=20261213T052000Z/20261213T061800Z&amp;details=Sumuhurtham+10%3A50+%E2%80%93+11%3A48+AM&amp;location=K.B.N+Convention+Hall%2C+Gooty+Road%2C+Ananthapuramu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Save the date</a>
+      <div class="scroll">Scroll for details<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </div>
+  </section>
+
+  <section id="couple" class="peach gated">
+    <div class="person rv">
+      <span class="cap">Chi.</span>
+      <h2 class="full">Yaswanth<br>Kumar Reddy</h2>
+      <span class="te">యశ్వంత్ కుమార్ రెడ్డి</span>
+      <p>Elder son of Smt. Konduru Lakshmidevi<br>&amp; Late Sri Konduru Ramamohan Reddy</p>
+      <p class="ital small">Kalluru Village, Garladinne Mandal, Ananthapuramu District</p>
+    </div>
+    <span class="amp rv">&amp;</span>
+    <div class="person rv">
+      <span class="cap">Chi. Kum. Sow.</span>
+      <h2 class="full">Sandhya</h2>
+      <span class="te">సంధ్య</span>
+      <p>Youngest daughter of Smt. Pothurai Suseelamma<br>&amp; Sri Pothurai Madhusudhan Reddy</p>
+      <p class="ital small">Kanampalli Village, Garladinne Mandal, Ananthapuramu District</p>
+    </div>
+  </section>
+
+  <section id="events" class="light gated">
+    <h2 class="title rv" style="font-size:5rem">Celebrations</h2>
+    <div class="evs">
+      <div class="ev rv">
+        <div class="art" style="--m:url(art/hands.png)"></div>
+        <h3>Wedding Reception</h3>
+        <p>Saturday, 12 December 2026 · Evening</p>
+        <p class="ital small">K.M. Colony, JNTU, Ananthapuramu</p>
+      </div>
+      <div class="ev rv">
+        <div class="art" style="--m:url(art/bottu.png)"></div>
+        <h3>Sumuhurtham</h3>
+        <p>Sunday, 13 December 2026 · 10:50 – 11:48 AM</p>
+        <span class="te">ఆదివారం ఉదయం 10:50 నుండి 11:48 లోపు</span>
+        <p class="ital small">K.B.N Convention Hall, Gooty Road, Ananthapuramu</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="count" class="dark gated">
+    <span class="cap rv">Until the Sumuhurtham</span>
+    <h2 class="disp reveal-h rv" style="font-size:8.4rem">Counting down</h2>
+    <span class="cap rv">to forever</span>
+    <div class="tiles rv" style="margin-top:2.4rem">
+      <div class="tile"><div class="coin"><b id="cd">00</b></div><span>Days</span></div>
+      <div class="tile"><div class="coin"><b id="ch">00</b></div><span>Hours</span></div>
+      <div class="tile"><div class="coin"><b id="cm">00</b></div><span>Min</span></div>
+      <div class="tile"><div class="coin"><b id="cs">00</b></div><span>Sec</span></div>
+    </div>
+    <p class="ital rv" style="color:var(--cream-s);margin-top:1.6rem">Sunday, 13 December 2026 · 10:50 AM</p>
+  </section>
+
+  <section id="venue" class="peach gated">
+    <div class="art rv" style="--m:url(art/kalasam.png);width:19rem;height:16rem"></div>
+    <span class="cap rv">Venue</span>
+    <h2 class="disp rv" style="font-size:6.4rem;line-height:1.15;color:var(--rose)">K.B.N Convention Hall</h2>
+    <p class="rv">Gooty Road, Ananthapuramu</p>
+    <p class="te rv">కె.బి.యన్ కన్వెన్షన్ హాల్, గుత్తి రోడ్, అనంతపురం</p>
+    <a class="btn plum rv" href="https://maps.google.com/?q=K.B.N+Convention+Hall,+Gooty+Road,+Ananthapuramu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>View on Google Maps</a>
+  </section>
+
+  <section id="rsvp" class="light gated">
+    <h2 class="disp rv" style="font-size:8rem;color:var(--rose)">RSVP</h2>
+    <span class="cap rv">Kindly confirm your presence</span>
+    <div class="phone rv"><b>91825 01032</b><div class="row"><a class="btn plum" href="tel:+919182501032">Call</a><a class="btn" href="https://wa.me/919182501032?text=Congratulations%21%20We%20will%20be%20attending%20the%20wedding%20of%20Yaswanth%20%26%20Sandhya." target="_blank" rel="noopener">WhatsApp</a></div></div>
+    <div class="phone rv"><b>91607 76077</b><div class="row"><a class="btn plum" href="tel:+919160776077">Call</a><a class="btn" href="https://wa.me/919160776077?text=Congratulations%21%20We%20will%20be%20attending%20the%20wedding%20of%20Yaswanth%20%26%20Sandhya." target="_blank" rel="noopener">WhatsApp</a></div></div>
+  </section>
+
+  <section id="compl" class="peach gated">
+    <span class="cap rv">With best compliments from</span>
+    <p class="rv" style="font-family:var(--fc);font-size:4rem;letter-spacing:.08em;color:var(--rose)">Chigicherla Obi Reddy</p>
+    <p class="ital rv">Ex. Z.P. Chairman</p>
+    <p class="rv">&amp; Near and Dear</p>
+    <div class="rule rv"></div>
+    <span class="cap rv">Invited by</span>
+    <p class="rv" style="font-family:var(--fc);font-size:3.1rem;letter-spacing:.06em;line-height:1.5;color:var(--rose)">Smt. Konduru Lakshmidevi<br>&amp; Late Sri Konduru Ramamohan Reddy</p>
+    <p class="ital small rv">D.No. 2-30-6, K.M. Colony, JNTU, Ananthapuramu</p>
+  </section>
+
+  <section id="close" class="light gated">
+    <div class="art rv" style="--m:url(art/couple.png);width:30rem;height:42rem;background:#a5675a"></div>
+    <p class="cap rv">Kindly grace the occasion and bless the couple</p>
+    <h2 class="title rv" style="font-size:6.4rem;letter-spacing:.12em">Yaswanth<br><span class="disp" style="text-transform:none;color:var(--cu-d)">&amp;</span><br>Sandhya</h2>
+    <p class="te rv">మీరు తప్పక విచ్చేసి వధూవరులను ఆశీర్వదించ ప్రార్థన</p>
+  </section>
+</main>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<audio id="song" src="song.mp3" loop preload="auto"></audio>
+<div id="fade" aria-hidden="true"></div>
+
+<script>
+(() => {
+const Q = new URLSearchParams(location.search), RENDER = Q.has('render');
+const H = document.documentElement, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+H.classList.add('js'); H.classList.add(RENDER ? 'render' : 'locked'); if (!RENDER) H.classList.add('gate');
+const B = 60 / 107.7, beats = s => Math.max(1, Math.round(s / B)) * B;          // the song's beat; video scene changes land on it
+const clamp = v => v < 0 ? 0 : v > 1 ? 1 : v, ease = p => p < .5 ? 2 * p * p : 1 - (2 - 2 * p) ** 2 / 2;
+const rng = seed => { let s = seed >>> 0 || 1; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; };
+const DPR = RENDER ? 1 : Math.min(devicePixelRatio || 1, 2);
+const remPx = () => parseFloat(getComputedStyle(H).fontSize);
+const canvasOf = (w, h) => { const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(w)); c.height = Math.max(1, Math.round(h)); return c; };
+
+/* ---------- embossed paper: motifs drawn into a mask, then lit from the top left ---------- */
+function motifs(x, W, Hh, seed, dense) {
+  const r = rng(seed);
+  x.fillStyle = x.strokeStyle = '#000'; x.lineCap = 'round'; x.lineJoin = 'round';
+  const frond = (sx, sy, a, L) => {
+    const pts = []; for (let i = 0; i <= 22; i++) { const t = i / 22; pts.push([sx + Math.cos(a) * L * t, sy + Math.sin(a) * L * t + .55 * L * t * t * Math.abs(Math.cos(a))]); }
+    x.lineWidth = L * .02; x.beginPath(); pts.forEach((p, i) => i ? x.lineTo(...p) : x.moveTo(...p)); x.stroke();
+    for (let i = 3; i < pts.length; i++) {
+      const [px, py] = pts[i], [qx, qy] = pts[i - 1], ta = Math.atan2(py - qy, px - qx), t = i / 22, l = L * .2 * (1 - t * .55);
+      x.lineWidth = L * .013;
+      for (const s of [-1, 1]) { const b = ta + s * 1.05 + .28; x.beginPath(); x.moveTo(px, py); x.lineTo(px + Math.cos(b) * l, py + Math.sin(b) * l); x.stroke(); }
+    }
+  };
+  const palm = (gx, gy, h, lean) => {
+    const tx = gx + lean, ty = gy - h, bz = t => [(1 - t) ** 2 * gx + 2 * (1 - t) * t * (gx + lean * .15) + t * t * tx, (1 - t) ** 2 * gy + 2 * (1 - t) * t * (gy - h * .5) + t * t * ty];
+    for (let i = 0; i < 16; i++) { const [ax, ay] = bz(i / 16 + .006), [bx, by] = bz((i + 1) / 16 - .006); x.lineWidth = h * .05 * (1 - i / 16 * .45); x.beginPath(); x.moveTo(ax, ay); x.lineTo(bx, by); x.stroke(); }
+    for (let i = 0; i < 9; i++) frond(tx, ty, -Math.PI / 2 + (i - 4) * .4 + (r() - .5) * .12, h * (.42 + r() * .12));
+    for (let i = 0; i < 3; i++) { x.beginPath(); x.arc(tx + (i - 1) * h * .03, ty + h * .035, h * .022, 0, 7); x.fill(); }
+  };
+  const fan = (cx, cy, R, a0, a1, n) => {
+    for (let i = 0; i < n; i++) { const a = a0 + (a1 - a0) * i / (n - 1); x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + Math.cos(a - .03) * R, cy + Math.sin(a - .03) * R); x.lineTo(cx + Math.cos(a) * R * 1.04, cy + Math.sin(a) * R * 1.04); x.lineTo(cx + Math.cos(a + .03) * R, cy + Math.sin(a + .03) * R); x.closePath(); x.fill(); }
+    x.lineWidth = R * .05; x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx, cy + R * .7); x.stroke();
+  };
+  const flower = (cx, cy, R, n, rot) => {
+    for (let k = 0; k < n; k++) { const a = rot + k * Math.PI * 2 / n; x.beginPath(); x.ellipse(cx + Math.cos(a) * R * .55, cy + Math.sin(a) * R * .55, R * .46, R * .22, a, 0, 7); x.fill(); }
+    x.globalCompositeOperation = 'destination-out'; x.beginPath(); x.arc(cx, cy, R * .2, 0, 7); x.fill(); x.globalCompositeOperation = 'source-over';
+    x.beginPath(); x.arc(cx, cy, R * .1, 0, 7); x.fill();
+  };
+  const sprig = (cx, cy, L, a) => {
+    x.lineWidth = L * .025; x.beginPath(); x.moveTo(cx, cy); const ex = cx + Math.cos(a) * L, ey = cy + Math.sin(a) * L; x.quadraticCurveTo(cx + Math.cos(a + .3) * L * .5, cy + Math.sin(a + .3) * L * .5, ex, ey); x.stroke();
+    for (let i = 1; i <= 6; i++) { const t = i / 7, px = cx + (ex - cx) * t, py = cy + (ey - cy) * t, s = i % 2 ? 1 : -1, b = a + s * .9; x.beginPath(); x.ellipse(px + Math.cos(b) * L * .07, py + Math.sin(b) * L * .07, L * .09, L * .035, b, 0, 7); x.fill(); }
+  };
+  const star = (cx, cy, R) => { x.lineWidth = R * .07; for (let k = 0; k < 16; k++) { const a = k * Math.PI / 8; x.beginPath(); x.moveTo(cx + Math.cos(a) * R * .3, cy + Math.sin(a) * R * .3); x.lineTo(cx + Math.cos(a) * R * (k % 2 ? .7 : 1), cy + Math.sin(a) * R * (k % 2 ? .7 : 1)); x.stroke(); } x.beginPath(); x.arc(cx, cy, R * .16, 0, 7); x.fill(); };
+  palm(150, Hh * .62, Hh * .32, 70); palm(950, Hh * .5, Hh * .26, -60);
+  fan(230, Hh * .98, 260, -Math.PI * .95, -Math.PI * .05, 23); fan(880, Hh * 1.02, 300, -Math.PI * .95, -Math.PI * .05, 25);
+  const n = dense ? 26 : 18;
+  for (let i = 0; i < n; i++) {
+    const px = 60 + r() * 960, py = 60 + r() * (Hh - 120), k = r();
+    if (k < .4) flower(px, py, 26 + r() * 22, 5 + Math.floor(r() * 3), r() * 6); else if (k < .72) sprig(px, py, 70 + r() * 60, r() * 6.28); else star(px, py, 22 + r() * 16);
+  }
+}
+function embossed(Wu, Hu, scale, seed, base, dense) {   // Wu×Hu design units, scale device px per unit; base null = relief only, transparent elsewhere
+  const w = Wu * scale, h = Hu * scale, m = canvasOf(w, h), mx = m.getContext('2d');
+  mx.scale(scale, scale); motifs(mx, Wu, Hu, seed, dense);
+  const tint = col => { const t = canvasOf(w, h), tc = t.getContext('2d'); tc.drawImage(m, 0, 0); tc.globalCompositeOperation = 'source-in'; tc.fillStyle = col; tc.fillRect(0, 0, w, h); return t; };
+  const out = canvasOf(w, h), o = out.getContext('2d'), d = 2.4 * scale;
+  if (base) { o.fillStyle = base; o.fillRect(0, 0, w, h); }
+  o.filter = `blur(${1.4 * scale}px)`; o.drawImage(tint('rgba(150,74,60,.24)'), d, d); o.drawImage(tint('rgba(255,255,255,.75)'), -d, -d); o.filter = 'none';
+  if (base) o.drawImage(tint(base), 0, 0); else { o.globalCompositeOperation = 'destination-out'; o.drawImage(m, 0, 0); o.globalCompositeOperation = 'source-over'; }
+  return out;
+}
+
+/* ---------- wax seal ---------- */
+function sealSVG() {
+  const N = 72, pts = [];
+  for (let i = 0; i < N; i++) { const a = i / N * Math.PI * 2, rr = 130 + 5 * Math.sin(5 * a + 1) + 3.5 * Math.sin(9 * a + 2.3) + 2.5 * Math.sin(14 * a + .7); pts.push([150 + rr * Math.cos(a), 150 + rr * Math.sin(a)]); }
+  let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+  for (let i = 0; i < N; i++) { const p0 = pts[(i - 1 + N) % N], p1 = pts[i], p2 = pts[(i + 1) % N], p3 = pts[(i + 2) % N];
+    d += `C${(p1[0] + (p2[0] - p0[0]) / 6).toFixed(1)} ${(p1[1] + (p2[1] - p0[1]) / 6).toFixed(1)} ${(p2[0] - (p3[0] - p1[0]) / 6).toFixed(1)} ${(p2[1] - (p3[1] - p1[1]) / 6).toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`; }
+  let leaves = '';
+  for (const [a0, a1] of [[118, 238], [62, -58]]) for (let k = 0; k <= 8; k++) {
+    const a = (a0 + (a1 - a0) * k / 8) * Math.PI / 180, cx = 150 + 102 * Math.cos(a), cy = 150 + 102 * Math.sin(a), rot = a * 180 / Math.PI + 90 + (k % 2 ? 28 : -28);
+    leaves += `<ellipse cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" rx="10" ry="4.6" transform="rotate(${rot.toFixed(1)} ${cx.toFixed(1)} ${cy.toFixed(1)})"/>`;
+  }
+  return `<svg viewBox="0 0 300 300" aria-hidden="true">
+  <defs>
+    <radialGradient id="wx" cx="40%" cy="34%" r="70%"><stop offset="0" stop-color="#f7c58f"/><stop offset=".5" stop-color="#d98840"/><stop offset="1" stop-color="#93491a"/></radialGradient>
+    <radialGradient id="wx2" cx="44%" cy="40%" r="60%"><stop offset="0" stop-color="#e9a463"/><stop offset="1" stop-color="#b9672b"/></radialGradient>
+    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff6e0" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="emb" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="b"/>
+      <feSpecularLighting in="b" surfaceScale="3.2" specularConstant="1" specularExponent="18" lighting-color="#ffe7c2" result="s"><fePointLight x="70" y="30" z="160"/></feSpecularLighting>
+      <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/><feOffset in="SourceAlpha" dx="1.6" dy="1.8" result="o"/><feFlood flood-color="#5a2508" flood-opacity=".55"/><feComposite in2="o" operator="in" result="sh"/>
+      <feMerge><feMergeNode in="sh"/><feMergeNode in="SourceGraphic"/><feMergeNode in="s2"/></feMerge></filter>
+    <filter id="dome" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur in="SourceAlpha" stdDeviation="9" result="b"/>
+      <feSpecularLighting in="b" surfaceScale="9" specularConstant=".8" specularExponent="14" lighting-color="#ffd9a6" result="s"><fePointLight x="60" y="20" z="260"/></feSpecularLighting>
+      <feComposite in="s" in2="SourceAlpha" operator="in" result="s2"/><feComposite in="SourceGraphic" in2="s2" operator="arithmetic" k2="1" k3=".55"/></filter>
+    <clipPath id="sc"><path d="${d}"/></clipPath>
+  </defs>
+  <path d="${d}" fill="url(#wx)" filter="url(#dome)"/>
+  <circle cx="150" cy="150" r="88" fill="url(#wx2)" stroke="#8c4417" stroke-opacity=".35" stroke-width="2"/>
+  <g fill="#d48a47" filter="url(#emb)">
+    <circle cx="150" cy="150" r="118" fill="none" stroke="#d48a47" stroke-width="3"/>
+    ${leaves}
+    <text x="150" y="176" text-anchor="middle" font-size="84" style="font-family:'Great Vibes',cursive" fill="#d9914e">Y&amp;S</text>
+  </g>
+  <g clip-path="url(#sc)"><rect id="glint" x="-160" y="-20" width="110" height="340" fill="url(#gl)" transform="rotate(18 150 150)"/></g>
+</svg>`;
+}
+
+/* ---------- hero: palace arch with garland, palace, palms and peacocks ---------- */
+function archPts(L, R, spring, apex) {   // left half of a pointed arch, from the springing line up to the apex
+  const cx = (L + R) / 2, w = R - L, h = spring - apex, P = [[L, spring], [L, spring - h * .58], [cx - w * .2, apex + h * .1], [cx, apex]];
+  return t => { const u = 1 - t; return [0, 1].map(k => u * u * u * P[0][k] + 3 * u * u * t * P[1][k] + 3 * u * t * t * P[2][k] + t * t * t * P[3][k]); };
+}
+function cuspedArch(c, L, R, spring, apex, bottom, lobes) {
+  const f = archPts(L, R, spring, apex), cx = (L + R) / 2, half = [];
+  for (let i = 0; i <= lobes; i++) half.push(f(i / lobes));
+  const right = half.map(([x, y]) => [2 * cx - x, y]).reverse();
+  const lobe = (a, b) => { const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy); let nx = -dy / len, ny = dx / len; if ((cx - mx) * nx + (spring - my) * ny < 0) { nx = -nx; ny = -ny; } c.quadraticCurveTo(mx - nx * len * .42, my - ny * len * .42, b[0], b[1]); };
+  c.moveTo(L, bottom); c.lineTo(L, spring);
+  for (let i = 1; i < half.length; i++) lobe(half[i - 1], half[i]);
+  for (let i = 1; i < right.length; i++) lobe(right[i - 1], right[i]);
+  c.lineTo(R, bottom);
+}
+function onion(c, cx, base, w, h) {
+  c.moveTo(cx - w / 2, base);
+  c.bezierCurveTo(cx - w * .66, base - h * .3, cx - w * .56, base - h * .66, cx - w * .1, base - h * .84);
+  c.quadraticCurveTo(cx - w * .02, base - h * .9, cx, base - h);
+  c.quadraticCurveTo(cx + w * .02, base - h * .9, cx + w * .1, base - h * .84);
+  c.bezierCurveTo(cx + w * .56, base - h * .66, cx + w * .66, base - h * .3, cx + w / 2, base);
+  c.closePath();
+}
+function smallArch(c, x, base, w, h) { c.moveTo(x, base); c.lineTo(x, base - h + w * .55); c.quadraticCurveTo(x, base - h + w * .08, x + w / 2, base - h); c.quadraticCurveTo(x + w, base - h + w * .08, x + w, base - h + w * .55); c.lineTo(x + w, base); c.closePath(); }
+const tinted = {};
+function tintArt(name, col) { const key = name + col; if (tinted[key]) return tinted[key]; const im = ART[name], t = canvasOf(im.naturalWidth, im.naturalHeight), x = t.getContext('2d'); x.drawImage(im, 0, 0); x.globalCompositeOperation = 'source-in'; x.fillStyle = col; x.fillRect(0, 0, t.width, t.height); return tinted[key] = t; }
+
+function drawHero(cv, Hu, scale) {
+  cv.width = Math.round(1080 * scale); cv.height = Math.round(Hu * scale);
+  const c = cv.getContext('2d'); c.setTransform(scale, 0, 0, scale, 0, 0);
+  const G = Hu - 120, cx = 540, r = rng(31);
+  let g = c.createLinearGradient(0, 0, 0, Hu); g.addColorStop(0, '#f4cdb6'); g.addColorStop(1, '#efbfa3'); c.fillStyle = g; c.fillRect(0, 0, 1080, Hu);
+  c.globalAlpha = .55; c.drawImage(EMB_PEACH, 0, 0, 1080, 1080 * EMB_PEACH.height / EMB_PEACH.width); c.globalAlpha = 1;
+  // the arch window
+  const L = 92, R = 988, spring = 560, apex = 120;
+  c.beginPath(); cuspedArch(c, L, R, spring, apex, Hu + 20, 6);
+  g = c.createRadialGradient(cx, 520, 40, cx, 620, 760); g.addColorStop(0, '#fff4ec'); g.addColorStop(.6, '#fbe6da'); g.addColorStop(1, '#f6d6c4'); c.fillStyle = g; c.fill();
+  c.lineWidth = 7; c.strokeStyle = '#d99a52'; c.stroke();
+  c.beginPath(); cuspedArch(c, L + 18, R - 18, spring + 6, apex + 22, Hu + 20, 6); c.lineWidth = 2.2; c.strokeStyle = 'rgba(205,140,80,.8)'; c.stroke();
+  // rosettes in the spandrels
+  for (const sx of [70, 1010]) { c.save(); c.translate(sx, 96); c.strokeStyle = '#d99a52'; c.fillStyle = 'rgba(217,154,82,.25)'; c.lineWidth = 2;
+    for (let k = 0; k < 12; k++) { c.rotate(Math.PI / 6); c.beginPath(); c.ellipse(0, -24, 7, 18, 0, 0, 7); c.fill(); c.stroke(); } c.beginPath(); c.arc(0, 0, 9, 0, 7); c.fillStyle = '#d99a52'; c.fill(); c.restore(); }
+  // marigold garland with mango leaves across the top of the window, and two hanging bells
+  const f = archPts(L + 18, R - 18, spring + 6, apex + 22), [gx0, gy0] = f(.62), gx1 = 1080 - gx0, sag = 60;
+  const gp = t => [gx0 + (gx1 - gx0) * t, gy0 + 4 * sag * t * (1 - t)];
+  for (let i = 0; i <= 13; i++) { const [x, y] = gp(i / 13); c.save(); c.translate(x, y + 8); c.rotate((i - 6.5) * .05);
+    const lg = c.createLinearGradient(0, 0, 0, 58); lg.addColorStop(0, '#6f8a52'); lg.addColorStop(1, '#93ad6c'); c.fillStyle = lg;
+    c.beginPath(); c.moveTo(0, 0); c.quadraticCurveTo(15, 26, 0, 58); c.quadraticCurveTo(-15, 26, 0, 0); c.fill(); c.strokeStyle = 'rgba(240,250,220,.5)'; c.lineWidth = 1.2; c.beginPath(); c.moveTo(0, 4); c.lineTo(0, 52); c.stroke(); c.restore(); }
+  for (let i = 0; i <= 60; i++) { const [x, y] = gp(i / 60); c.beginPath(); c.arc(x, y, 10.5, 0, 7); c.fillStyle = i % 3 === 1 ? '#f7c548' : i % 3 === 2 ? '#ee8a2a' : '#f2a33a'; c.fill(); c.beginPath(); c.arc(x - 3, y - 3, 3.5, 0, 7); c.fillStyle = 'rgba(255,240,200,.55)'; c.fill(); }
+  for (const t of [.06, .94]) { const [x, y] = gp(t); c.strokeStyle = '#c98a3e'; c.lineWidth = 2.4; c.beginPath(); c.moveTo(x, y); c.lineTo(x, y + 120); c.stroke();
+    for (let i = 0; i < 6; i++) { c.beginPath(); c.arc(x, y + 14 + i * 18, 5.5, 0, 7); c.fillStyle = i % 2 ? '#f7c548' : '#ee8a2a'; c.fill(); }
+    const bg = c.createLinearGradient(x - 26, 0, x + 26, 0); bg.addColorStop(0, '#b86f2a'); bg.addColorStop(.45, '#f3c06e'); bg.addColorStop(1, '#a35d22'); c.fillStyle = bg;
+    c.beginPath(); c.moveTo(x - 7, y + 120); c.quadraticCurveTo(x - 24, y + 130, x - 26, y + 168); c.lineTo(x + 26, y + 168); c.quadraticCurveTo(x + 24, y + 130, x + 7, y + 120); c.closePath(); c.fill();
+    c.beginPath(); c.arc(x, y + 172, 6, 0, 7); c.fillStyle = '#a35d22'; c.fill(); }
+  // palace, far layer
+  const pale = '#f8e4d7', paleS = '#ebc6b1', paleD = '#d9a690';
+  const shade = (x0, x1) => { const s = c.createLinearGradient(x0, 0, x1, 0); s.addColorStop(0, pale); s.addColorStop(.55, pale); s.addColorStop(1, paleS); return s; };
+  for (const mx of [196, 884]) {   // minarets
+    c.fillStyle = shade(mx - 24, mx + 24); c.fillRect(mx - 22, G - 520, 44, 520);
+    for (const by of [G - 210, G - 390]) { c.fillStyle = paleS; c.fillRect(mx - 32, by, 64, 14); }
+    c.beginPath(); onion(c, mx, G - 520, 64, 70); c.fillStyle = shade(mx - 32, mx + 32); c.fill();
+    c.strokeStyle = '#c98a3e'; c.lineWidth = 2.5; c.beginPath(); c.moveTo(mx, G - 590); c.lineTo(mx, G - 615); c.stroke();
+  }
+  c.fillStyle = shade(250, 830); c.fillRect(250, G - 350, 580, 350);
+  c.fillStyle = paleS; c.fillRect(238, G - 364, 604, 18);
+  for (let x = 246; x < 838; x += 26) { c.beginPath(); c.arc(x + 9, G - 364, 9, Math.PI, 0); c.fill(); }
+  c.fillStyle = shade(420, 660); c.fillRect(424, G - 416, 232, 54);
+  c.beginPath(); onion(c, cx, G - 416, 268, 250); g = c.createLinearGradient(cx - 140, 0, cx + 140, 0); g.addColorStop(0, '#fdf0e8'); g.addColorStop(.5, pale); g.addColorStop(1, paleD); c.fillStyle = g; c.fill();
+  c.strokeStyle = 'rgba(201,138,62,.55)'; c.lineWidth = 2; for (const dx of [-60, 0, 60]) { c.beginPath(); c.moveTo(cx + dx * .3, G - 655); c.quadraticCurveTo(cx + dx * 1.25, G - 540, cx + dx, G - 418); c.stroke(); }
+  c.strokeStyle = '#c98a3e'; c.lineWidth = 3; c.beginPath(); c.moveTo(cx, G - 666); c.lineTo(cx, G - 712); c.stroke(); c.fillStyle = '#d99a52'; for (const [yy, rr] of [[G - 676, 7], [G - 694, 5]]) { c.beginPath(); c.arc(cx, yy, rr, 0, 7); c.fill(); }
+  for (const kx of [310, 770]) {   // chhatris on the corners
+    c.fillStyle = paleS; c.fillRect(kx - 52, G - 380, 104, 14);
+    for (const px of [-40, -14, 14, 40]) { c.fillStyle = shade(kx + px - 5, kx + px + 5); c.fillRect(kx + px - 5, G - 440, 10, 62); }
+    c.fillStyle = paleS; c.fillRect(kx - 56, G - 452, 112, 14);
+    c.beginPath(); onion(c, kx, G - 452, 96, 84); c.fillStyle = shade(kx - 48, kx + 48); c.fill();
+  }
+  c.fillStyle = paleD;
+  for (let i = 0; i < 8; i++) { if (i === 3 || i === 4) continue; c.beginPath(); smallArch(c, 284 + i * 66, G - 190, 46, 104); c.fill(); }
+  for (let i = 0; i < 8; i++) { if (i === 3 || i === 4) continue; c.beginPath(); smallArch(c, 290 + i * 66, G - 30, 34, 120); c.fill(); }
+  // gateway with the couple
+  c.beginPath(); smallArch(c, cx - 96, G, 192, 300); g = c.createLinearGradient(0, G - 300, 0, G); g.addColorStop(0, '#d9a08a'); g.addColorStop(1, '#e8bba5'); c.fillStyle = g; c.fill();
+  c.strokeStyle = '#d99a52'; c.lineWidth = 3; c.stroke();
+  const cp = tintArt('couple', '#8f4c42'), ch = 250, cw = ch * cp.width / cp.height; c.drawImage(cp, cx - cw / 2, G - ch - 6, cw, ch);
+  // side pavilions, nearer and warmer
+  const warm = '#f2cdb9', warmS = '#e2ae96';
+  for (const [x0, flip] of [[-30, 1], [1110, -1]]) {
+    c.save(); c.translate(x0, 0); c.scale(flip, 1);
+    g = c.createLinearGradient(0, 0, 230, 0); g.addColorStop(0, warm); g.addColorStop(1, warmS); c.fillStyle = g; c.fillRect(0, G - 250, 230, 250);
+    c.fillStyle = warmS; c.fillRect(-6, G - 262, 242, 16);
+    c.beginPath(); onion(c, 120, G - 262, 130, 120); c.fillStyle = g; c.fill();
+    c.fillStyle = '#d5998a'; for (const ax of [40, 140]) { c.beginPath(); smallArch(c, ax, G - 40, 56, 150); c.fill(); }
+    c.restore();
+  }
+  // palms
+  const palm = (bx, by, h, lean, flip) => {
+    c.save(); c.translate(bx, by); c.scale(flip, 1);
+    const tx = lean, ty = -h;
+    c.strokeStyle = '#8e7560'; c.lineCap = 'round';
+    for (let i = 0; i < 18; i++) { const t0 = i / 18, t1 = (i + .82) / 18, p = t => [lean * t * t, -h * t]; c.lineWidth = 26 - i * .7; c.beginPath(); c.moveTo(...p(t0)); c.lineTo(...p(t1)); c.stroke(); }
+    for (let i = 0; i < 10; i++) {
+      const a = -Math.PI / 2 + (i - 4.5) * .36, L = h * (.48 + (i % 3) * .05);
+      const pts = []; for (let k = 0; k <= 24; k++) { const t = k / 24; pts.push([tx + Math.cos(a) * L * t, ty + Math.sin(a) * L * t + .6 * L * t * t * Math.abs(Math.cos(a))]); }
+      c.fillStyle = i % 2 ? '#7f9a6a' : '#90aa79'; c.beginPath(); c.moveTo(...pts[0]);
+      for (let k = 1; k <= 24; k++) { const [px, py] = pts[k], [qx, qy] = pts[k - 1], ta = Math.atan2(py - qy, px - qx), w = L * .16 * Math.sin(Math.PI * k / 24); c.lineTo(px + Math.cos(ta - 1.3) * w, py + Math.sin(ta - 1.3) * w); c.lineTo(px, py); }
+      for (let k = 24; k >= 1; k--) { const [px, py] = pts[k], [qx, qy] = pts[k - 1], ta = Math.atan2(py - qy, px - qx), w = L * .16 * Math.sin(Math.PI * k / 24); c.lineTo(px + Math.cos(ta + 1.3 + .4) * w, py + Math.sin(ta + 1.3 + .4) * w); c.lineTo(qx, qy); }
+      c.fill();
+    }
+    c.restore();
+  };
+  palm(96, G + 40, 560, 60, 1); palm(990, G + 40, 500, 50, -1);
+  // garden: hedge, marigolds, banana leaves
+  g = c.createLinearGradient(0, G - 40, 0, Hu); g.addColorStop(0, '#93ab7f'); g.addColorStop(1, '#6f8a62'); c.fillStyle = g;
+  c.beginPath(); c.moveTo(0, Hu); c.lineTo(0, G); for (let x = 0; x <= 1080; x += 36) c.arc(x + 18, G + 6, 26 + 8 * Math.sin(x * .07), Math.PI, 0); c.lineTo(1080, Hu); c.closePath(); c.fill();
+  c.fillStyle = '#e8bba5'; c.fillRect(cx - 120, G - 2, 240, 22); c.fillStyle = '#ddaa92'; c.fillRect(cx - 150, G + 20, 300, 22);
+  for (let i = 0; i < 46; i++) { const x = 20 + r() * 1040, y = G + 10 + r() * 90; if (Math.abs(x - cx) < 150 && y < G + 46) continue; c.beginPath(); c.arc(x, y, 9 + r() * 6, 0, 7); c.fillStyle = ['#ee8a2a', '#f7c548', '#f2a3a0', '#e8714f'][i % 4]; c.fill(); c.beginPath(); c.arc(x, y, 3, 0, 7); c.fillStyle = 'rgba(120,60,20,.5)'; c.fill(); }
+  const banana = (bx, by, a, L, flip) => { c.save(); c.translate(bx, by); c.scale(flip, 1); c.rotate(a);
+    g = c.createLinearGradient(0, 0, L, 0); g.addColorStop(0, '#5f7d52'); g.addColorStop(1, '#8aa774'); c.fillStyle = g;
+    c.beginPath(); c.moveTo(0, 0); c.bezierCurveTo(L * .3, -L * .22, L * .8, -L * .2, L, 0); c.bezierCurveTo(L * .8, L * .12, L * .3, L * .14, 0, 0); c.fill();
+    c.strokeStyle = 'rgba(230,240,210,.55)'; c.lineWidth = 3; c.beginPath(); c.moveTo(0, 0); c.quadraticCurveTo(L * .5, -L * .05, L, 0); c.stroke();
+    c.lineWidth = 1.2; for (let k = 1; k < 12; k++) { const t = k / 12; c.beginPath(); c.moveTo(L * t, -L * .03 * Math.sin(Math.PI * t)); c.lineTo(L * t + 14, -L * .17 * Math.sin(Math.PI * t)); c.stroke(); }
+    c.restore(); };
+  banana(-20, Hu + 10, -.75, 330, 1); banana(-10, Hu + 30, -.35, 280, 1); banana(1100, Hu + 10, -.75, 330, -1); banana(1090, Hu + 30, -.35, 280, -1);
+  peacock(c, 300, G + 4, 1, false); peacock(c, 780, G + 4, 1, true);
+}
+function peacock(c, x, y, s, flip) {
+  c.save(); c.translate(x, y); c.scale(flip ? -s : s, s);
+  const R = [-26, -66];
+  for (let i = 0; i < 11; i++) {   // the train, back to front
+    const a = Math.PI * (.9 + i * .022), L = 250 - Math.abs(i - 5) * 10, ex = R[0] + Math.cos(a) * L, ey = R[1] + Math.sin(a) * L + L * .3;
+    const mx = (R[0] + ex) / 2, my = (R[1] + ey) / 2 - 18;
+    const g = c.createLinearGradient(R[0], R[1], ex, ey); g.addColorStop(0, '#1f5f74'); g.addColorStop(1, '#3f8a5a');
+    c.fillStyle = g; c.beginPath(); c.moveTo(R[0], R[1] - 6); c.quadraticCurveTo(mx, my - 22, ex, ey - 4); c.quadraticCurveTo(ex - 6, ey + 14, ex - 2, ey + 6); c.quadraticCurveTo(mx, my + 26, R[0], R[1] + 8); c.closePath(); c.fill();
+    for (const [t, k] of [[1, 1], [.62, .7]]) { const px = R[0] + (ex - R[0]) * t, py = R[1] + (ey - R[1]) * t - (t < 1 ? 10 : 0);
+      for (const [rx, ry, col] of [[17, 12, '#d8b54c'], [12.5, 8.5, '#2a9a92'], [7.5, 5.5, '#1d4a8c'], [3.5, 2.6, '#0d1f3d']]) { c.beginPath(); c.ellipse(px, py, rx * k, ry * k, a + .2, 0, 7); c.fillStyle = col; c.fill(); } }
+  }
+  c.strokeStyle = '#a07a58'; c.lineWidth = 3.2; c.lineCap = 'round';
+  c.beginPath(); c.moveTo(-6, -46); c.lineTo(-10, 0); c.moveTo(8, -46); c.lineTo(10, 0); c.moveTo(-18, 0); c.lineTo(-2, 0); c.moveTo(4, 0); c.lineTo(20, 0); c.stroke();
+  let g = c.createRadialGradient(0, -80, 6, 0, -70, 56); g.addColorStop(0, '#2c7fa0'); g.addColorStop(1, '#173f7a'); c.fillStyle = g;
+  c.beginPath(); c.ellipse(-4, -70, 46, 30, -.25, 0, 7); c.fill();
+  c.beginPath(); c.moveTo(14, -86); c.bezierCurveTo(30, -110, 22, -140, 34, -170); c.lineTo(46, -168); c.bezierCurveTo(40, -140, 46, -112, 34, -76); c.closePath(); c.fill();
+  c.fillStyle = '#c9a57a'; c.beginPath(); c.ellipse(-14, -70, 24, 14, -.35, 0, 7); c.fill();
+  c.strokeStyle = 'rgba(120,80,40,.5)'; c.lineWidth = 1.2; for (let k = -2; k <= 2; k++) { c.beginPath(); c.moveTo(-30 + k * 7, -76); c.lineTo(-24 + k * 7, -62); c.stroke(); }
+  c.fillStyle = '#1b4a8c'; c.beginPath(); c.arc(41, -175, 11, 0, 7); c.fill();
+  c.fillStyle = '#e0bd8c'; c.beginPath(); c.moveTo(50, -178); c.lineTo(63, -173); c.lineTo(50, -169); c.closePath(); c.fill();
+  c.fillStyle = '#fff'; c.beginPath(); c.arc(44, -177, 3, 0, 7); c.fill(); c.fillStyle = '#0d1f3d'; c.beginPath(); c.arc(44.6, -177, 1.5, 0, 7); c.fill();
+  c.strokeStyle = '#1b4a8c'; c.lineWidth = 1.6; for (let k = 0; k < 4; k++) { const a = -Math.PI / 2 - .5 + k * .3, ex = 40 + Math.cos(a) * 26, ey = -184 + Math.sin(a) * 26; c.beginPath(); c.moveTo(40, -184); c.lineTo(ex, ey); c.stroke(); c.beginPath(); c.arc(ex, ey, 3, 0, 7); c.fillStyle = '#2a9a92'; c.fill(); }
+  c.restore();
+}
+
+/* ---------- copper foils on the three date circles ---------- */
+const coins = $$('#reveal .coin canvas').map((cv, i) => ({ cv, i, cx: cv.getContext('2d'), done: false, strokes: 0 }));
+function paintFoil(o) {
+  const r = o.cv.getBoundingClientRect(), W = Math.max(8, Math.round(r.width * DPR)); o.cv.width = o.cv.height = W; o.W = W;
+  const x = o.cx; x.globalCompositeOperation = 'source-over'; x.clearRect(0, 0, W, W);
+  let g = x.createRadialGradient(W * .36, W * .3, W * .03, W * .5, W * .52, W * .55); g.addColorStop(0, '#ffe7c4'); g.addColorStop(.22, '#fbb46a'); g.addColorStop(.68, '#e47b2c'); g.addColorStop(1, '#a24c15');
+  x.fillStyle = g; x.beginPath(); x.arc(W / 2, W / 2, W / 2, 0, 7); x.fill();
+  g = x.createRadialGradient(W * .33, W * .26, 0, W * .33, W * .26, W * .24); g.addColorStop(0, 'rgba(255,255,255,.9)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, W, W);
+  const rr = rng(7 + o.i); x.fillStyle = 'rgba(255,245,225,.55)'; for (let k = 0; k < 40; k++) { const a = rr() * 6.28, d = Math.sqrt(rr()) * W * .46; x.beginPath(); x.arc(W / 2 + Math.cos(a) * d, W / 2 + Math.sin(a) * d, rr() * W * .008 + .5, 0, 7); x.fill(); }
+  x.globalCompositeOperation = 'destination-out'; x.fillStyle = '#000'; o.cv.style.opacity = 1;
+}
+const scratchAt = (o, px, py, rad) => { o.cx.beginPath(); o.cx.arc(px, py, rad, 0, 7); o.cx.fill(); };
+function setFoil(o, p) {   // deterministic zig-zag rub for the video
+  paintFoil(o); if (p <= 0) return; const W = o.W, n = Math.floor(p * 70);
+  for (let k = 0; k < n; k++) { const u = k / 70, row = Math.floor(u * 6), f = u * 6 % 1; scratchAt(o, W * (.1 + .8 * (row % 2 ? 1 - f : f)), W * (.16 + row * .14), W * .17); }
+  o.cv.style.opacity = p > .8 ? 1 - (p - .8) / .2 : 1;
+}
+function cleared(o) { const a = o.cx.getImageData(0, 0, o.W, o.W).data; let n = 0, m = 0; for (let i = 3; i < a.length; i += 4 * 7) { m++; if (a[i] < 20) n++; } return n / m; }
+function finishCoin(o) { if (o.done) return; o.done = true; o.cv.style.transition = 'opacity .7s'; o.cv.style.opacity = 0; o.cv.style.pointerEvents = 'none'; if (coins.every(c => c.done)) unlock(); }
+for (const o of coins) {
+  let down = false, sx = 0, sy = 0, moved = 0;
+  const at = e => { const r = o.cv.getBoundingClientRect(), k = o.W / r.width; return [(e.clientX - r.left) * k, (e.clientY - r.top) * k]; };
+  o.cv.addEventListener('pointerdown', e => { down = true; moved = 0; [sx, sy] = [e.clientX, e.clientY]; o.cv.setPointerCapture(e.pointerId); scratchAt(o, ...at(e), o.W * .14); });
+  o.cv.addEventListener('pointermove', e => { if (!down) return; moved = Math.max(moved, Math.hypot(e.clientX - sx, e.clientY - sy)); scratchAt(o, ...at(e), o.W * .14); if (++o.strokes % 8 === 0 && cleared(o) > .45) finishCoin(o); });
+  o.cv.addEventListener('pointerup', () => { down = false; if (moved < 8 || cleared(o) > .45) finishCoin(o); });
+  o.cv.addEventListener('pointercancel', () => { down = false; });
+  o.cv.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); finishCoin(o); } });
+}
+const after = $('#after'), tip = $('#tip');
+function setAfter(p) { after.style.opacity = p; after.style.transform = `translateY(${(1 - p) * 2}rem)`; tip.style.opacity = 1 - clamp(p * 3); }
+let unlocked = false;
+function unlock() {
+  if (unlocked) return; unlocked = true;
+  try { localStorage.setItem('ys-date', '1'); } catch {}
+  H.classList.remove('gate'); RV = $$('.rv');
+  const t0 = performance.now(); (function k(n) { const s = (n - t0) / 1000; setAfter(ease(clamp((s - .3) / .8))); drawConfetti(s); if (s < 3.4) requestAnimationFrame(k); })(t0);
+}
+
+/* ---------- confetti when the date is revealed ---------- */
+const conf = $('#confetti'), ccx = conf.getContext('2d');
+const BITS = (() => { const r = rng(99); return Array.from({ length: 110 }, () => ({ x: r() * 1080, d: r() * .7, v: 520 + r() * 520, sw: 20 + r() * 50, ph: r() * 6.28, spin: 3 + r() * 6, w: 10 + r() * 12, h: 5 + r() * 6, col: ['#f2a660', '#ffd29a', '#e48a3c', '#f6c9bf', '#fff3e6', '#c98a3e'][Math.floor(r() * 6)] })); })();
+function drawConfetti(s) {
+  const r = conf.getBoundingClientRect(), W = Math.round(r.width * DPR), Hh = Math.round(r.height * DPR);
+  if (conf.width !== W || conf.height !== Hh) { conf.width = W; conf.height = Hh; }
+  ccx.setTransform(1, 0, 0, 1, 0, 0); ccx.clearRect(0, 0, W, Hh); if (s <= 0 || s > 3.4) return;
+  const k = W / 1080; ccx.setTransform(k, 0, 0, k, 0, 0); const Hu = Hh / k;
+  for (const b of BITS) { const t = s - b.d; if (t < 0) continue; const y = -40 + b.v * t, x = b.x + Math.sin(b.ph + t * 3) * b.sw; if (y > Hu + 40) continue;
+    ccx.save(); ccx.globalAlpha = clamp((3.4 - s) / .8); ccx.translate(x, y); ccx.rotate(b.ph + t * b.spin * .4); ccx.scale(Math.cos(b.ph + t * b.spin), 1); ccx.fillStyle = b.col; ccx.fillRect(-b.w / 2, -b.h / 2, b.w, b.h); ccx.restore(); }
+}
+
+/* ---------- countdown ---------- */
+const T0 = Date.parse('2026-12-13T10:50:00+05:30'), tiles = ['#cd', '#ch', '#cm', '#cs'].map(s => $(s));
+function setCount(now) { let x = Math.max(0, T0 - now) / 1000; const d = Math.floor(x / 86400); x -= d * 86400; const h = Math.floor(x / 3600); x -= h * 3600; [d, h, Math.floor(x / 60), Math.floor(x % 60)].forEach((v, i) => tiles[i].textContent = String(v).padStart(2, '0')); }
+
+/* ---------- envelope opening: one function of time since the tap ---------- */
+const env = $('#env'), flap = $('#flap'), front = $('#flap .front'), back = $('#flap .back'), seal = $('#seal'), rays = $('#rays'), glow = $('#glow'), flash = $('#flash'), snd = $('#snd'), song = $('#song');
+const page = $('#page'), hero = $('#hero');
+let heroP = 0, glint = null;
+const SEQ = 3.5;
+function setEnvelope(u) {
+  const pre = u < 0, v = Math.max(0, u);
+  const press = clamp(v / .35), f = ease(clamp((v - .45) / 1)), rb = clamp((v - .95) / 1.5);
+  seal.style.transform = `scale(${pre ? 1 + .03 * Math.sin(u * 2.4) : 1 - .07 * Math.sin(Math.PI * press)})`;
+  if (glint) glint.setAttribute('x', pre ? -160 : -160 + 460 * ease(clamp(v / .7)));
+  flap.style.transform = `perspective(2600px) rotateX(${180 * f}deg)`;
+  const open = f >= .5; front.style.visibility = open ? 'hidden' : 'visible'; seal.style.visibility = open ? 'hidden' : 'visible'; back.style.visibility = open ? 'visible' : 'hidden';
+  rays.style.opacity = rb > 0 ? Math.min(1, rb * 3) * (1 - clamp((rb - .7) / .3) * .3) : 0; rays.style.transform = `scale(${.25 + 1.5 * ease(rb)}) rotate(${30 * rb}deg)`;
+  glow.style.opacity = clamp((v - .85) / .7); glow.style.transform = `scale(${.4 + .9 * ease(clamp((v - .85) / 1.6))})`;
+  $('#env .hint').style.opacity = 1 - clamp(v / .4);
+  const fl = v < 1.9 ? 0 : v < 2.45 ? (v - 1.9) / .55 : v < 2.65 ? 1 : 1 - clamp((v - 2.65) / .8);
+  flash.style.opacity = fl; env.hidden = v >= 2.55;
+  heroP = ease(clamp((v - 2.7) / 1.1));
+}
+
+/* ---------- reveal on scroll ---------- */
+let RV = $$('.rv');
+function update() {
+  const vh = innerHeight;
+  for (const el of RV) {
+    if (!el.offsetParent && !RENDER) continue;
+    const r = el.getBoundingClientRect(); let p = ease(clamp((vh * .92 - r.top) / (vh * .2))); if (hero.contains(el)) p *= heroP;
+    el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 3}rem)`;
+  }
+}
+
+/* ---------- interactive page ---------- */
+let opened = false;
+function open() {
+  if (opened) return; opened = true; seal.style.animation = 'none';
+  song.play().then(() => snd.classList.remove('off')).catch(() => {}); snd.hidden = false;
+  const t0 = performance.now();
+  (function k(n) { const u = (n - t0) / 1000; setEnvelope(u); update(); if (u < SEQ) requestAnimationFrame(k); else { H.classList.remove('locked'); env.remove(); } })(t0);
+}
+seal.addEventListener('click', open); seal.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+env.addEventListener('click', e => { if (e.target === env || e.target.closest('#env')) open(); });
+snd.addEventListener('click', () => { if (song.paused) song.play().catch(() => {}); else song.pause(); snd.classList.toggle('off', song.paused); });
+addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+
+/* ---------- painting ---------- */
+let EMB_PEACH = null;
+function paint() {
+  const k = remPx() / 10 * DPR;   // device px per design unit (1080 units across the column)
+  const envH = env.getBoundingClientRect().height / (remPx() / 10);
+  const paper = embossed(1080, envH, k, 5, '#f3d6cd', true);
+  for (const id of ['#envpaper', '#flappaper']) { const c = $(id), x = c.getContext('2d'); c.width = paper.width; c.height = paper.height; x.drawImage(paper, 0, 0);
+    if (id === '#envpaper') { x.save(); x.scale(k, k); x.strokeStyle = 'rgba(150,80,65,.16)'; x.lineWidth = 2; x.beginPath(); x.moveTo(0, envH); x.lineTo(540, envH * .6); x.lineTo(1080, envH); x.stroke(); x.strokeStyle = 'rgba(255,255,255,.5)'; x.beginPath(); x.moveTo(0, envH - 2); x.lineTo(540, envH * .6 - 2); x.lineTo(1080, envH - 2); x.stroke(); x.restore(); } }
+  const card = embossed(1080, 1920, Math.min(k, 2), 17, null, false);
+  EMB_PEACH = embossed(1080, 1920, Math.min(k, 2), 23, '#f4cdb6', false);
+  return new Promise(res => card.toBlob(b => { H.style.setProperty('--emboss', `url(${URL.createObjectURL(b)})`); res(); }, 'image/png'));
+}
+function paintHero() { const r = hero.getBoundingClientRect(), u = remPx() / 10; drawHero($('#herocv'), r.height / u, u * DPR); }
+
+/* ---------- video schedule: scene changes on beats of the song ---------- */
+const TAP = beats(1.7);
+const HOLD = { hero: 5.2, day: 4.6, reveal: 8.6, couple: 4.6, events: 4.8, count: 3.2, venue: 3.4, rsvp: 3.2, compl: 3.4, close: 4.6 };
+let moves = [], arrive = {}, NOW0 = Math.floor(Date.now() / 36e5) * 36e5;
+function schedule() {
+  const vh = innerHeight, yMax = page.offsetHeight - vh, mv = beats(1.1); let t = beats(TAP + SEQ - .6), y0 = 0;
+  for (const s of $$('section')) {
+    const y = Math.min(s.getBoundingClientRect().top, yMax);
+    if (y !== y0) { moves.push({ t0: t, t1: t + mv, y0, y1: y }); t += mv; y0 = y; }
+    arrive[s.id] = t; t += beats(HOLD[s.id]);
+  }
+  window.DUR = t; window.EV = Object.entries(arrive).map(([name, t]) => ({ name, t }));
+}
+function scrollAt(t) { let y = 0; for (const m of moves) { if (t < m.t0) return y; if (t < m.t1) return m.y0 + (m.y1 - m.y0) * ease((t - m.t0) / (m.t1 - m.t0)); y = m.y1; } return y; }
+window.render = t => {
+  setEnvelope(t - TAP);
+  page.style.transform = `translate3d(0,${-scrollAt(t)}px,0)`;
+  const a = arrive.reveal;
+  coins.forEach((o, i) => setFoil(o, clamp((t - a - beats(1.4) - i * beats(1.1)) / beats(.9))));
+  const un = t - (a + beats(1.4) + 2 * beats(1.1) + beats(.9));
+  setAfter(ease(clamp((un - .3) / .8))); drawConfetti(un);
+  setCount(NOW0 + t * 1000);
+  snd.hidden = t < TAP + 2.6; snd.classList.remove('off');
+  update();
+  $('#fade').style.opacity = Math.max(clamp(1 - t / .4), clamp((t - (window.DUR - 1)) / 1));
+};
+
+/* ---------- load fonts and art, then paint ---------- */
+const wait = ms => new Promise(r => setTimeout(r, ms)), retry = (fn, n = 5) => fn().catch(e => n > 1 ? wait(400).then(() => retry(fn, n - 1)) : Promise.reject(e));
+const FONTS = [['Cinzel', 'fonts/Cinzel.ttf', { weight: '400 900' }], ['Cormorant Garamond', 'fonts/CormorantGaramond.ttf', { weight: '300 700' }], ['Cormorant Garamond', 'fonts/CormorantGaramond-Italic.ttf', { weight: '300 700', style: 'italic' }],
+  ['Playfair Display', 'fonts/PlayfairDisplay.ttf', { weight: '400 900' }], ['Playfair Display', 'fonts/PlayfairDisplay-Italic.ttf', { weight: '400 900', style: 'italic' }], ['Great Vibes', 'fonts/GreatVibes.ttf', {}], ['Mallanna', 'fonts/Mallanna.ttf', {}]];
+const ART = {};
+const loadFont = ([f, u, d]) => retry(() => new FontFace(f, `url(${u})`, d).load().then(x => document.fonts.add(x)));
+const loadArt = n => retry(() => new Promise((ok, bad) => { const i = new Image(); i.onload = () => { ART[n] = i; ok(); }; i.onerror = bad; i.src = 'art/' + n + '.png'; }));
+async function start() {
+  seal.innerHTML = sealSVG(); glint = seal.querySelector('#glint');
+  H.classList.add('loaded');
+  await paint(); paintHero(); coins.forEach(paintFoil); setCount(Date.now()); setEnvelope(-1); update();
+  let seen = false; try { seen = localStorage.getItem('ys-date') === '1'; } catch {}
+  if (!RENDER && seen) { coins.forEach(o => { o.done = true; o.cv.style.opacity = 0; o.cv.style.pointerEvents = 'none'; }); unlocked = true; H.classList.remove('gate'); RV = $$('.rv'); setAfter(1); }
+  if (RENDER) { schedule(); render(0); window.READY = true; }
+  else {
+    setInterval(() => setCount(Date.now()), 1000);
+    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { paintHero(); coins.forEach(o => o.done || paintFoil(o)); update(); }, 200); });
+  }
+}
+Promise.all([...FONTS.map(loadFont), ...['ganesha', 'couple', 'hands', 'bottu', 'kalasam'].map(loadArt)]).then(start, e => { console.error(e); start(); });
+})();
+</script>
+</body>
+</html>

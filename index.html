@@ -22,7 +22,16 @@
   --desk:#3b4330; --olive:#687349; --olive-d:#4d5738; --olive-l:#7f8b62;
   --cream:#f8edda; --cream-d:#efdfc6; --blush:#f3d9c3; --blush-d:#e5bd9c; --blush-l:#fbeadb;
   --ink:#4a3a2a; --soft:#7f685a; --gold:#a98447; --gold-d:#8a6a3a; --pearl:#fff6e8;
-  --fd:'Great Vibes',cursive; --fs:'Cormorant Garamond',Georgia,serif; --fc:'Cinzel','Cormorant Garamond',Georgia,serif; --ft:'Mallanna','Noto Sans Telugu',sans-serif;
+  --fd:'Great Vibes',cursive; --fb:var(--fs);
+  --envbg:linear-gradient(135deg,var(--olive-l),var(--olive) 45%,var(--olive-d)); --envpat:var(--leaf); --envfg:var(--pearl);
+  --seal1:#fbf1e2; --seal2:#ecd9bd; --sealline:#b8975a; --sealink:#4a3a2a; --sealsub:#8a6a3a; --cord:linear-gradient(90deg,#c9ad70,#e9d4a3,#a88a4c);
+  --drape:repeating-linear-gradient(90deg,var(--blush) 0 2.2rem,var(--blush-d) 2.2rem 3.4rem,var(--blush-l) 3.4rem 5.4rem,var(--blush) 5.4rem 7rem);
+  --dot:#fff; --dot2:#dcc9a8; --val1:#fbeadb; --val2:#e5bd9c; --valline:#c9a06a; --valpearl:#fff6e8;
+  --cardpat:none; --artc:var(--gold-d); --vinec:var(--gold); --btnbg:var(--olive); --btnfg:var(--pearl); --btnr:999px; --tilebg:var(--cream-d); --tileline:var(--gold);
+  --sc1:#e6c3a0; --sc2:#f8e6d4; --sc3:#d6ab84; --sct:#8a6a3a;
+  --leafgold:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><g fill='rgba(212,175,106,.06)' stroke='rgba(212,175,106,.38)' stroke-width='1.1'><path d='M18 96c6-34 30-54 62-58-6 34-30 54-62 58z'/><path d='M86 154c-6-34 8-62 38-78 6 34-8 62-38 78z' transform='rotate(-30 100 110)'/><path d='M104 36c20-14 44-14 56 4-20 14-44 14-56-4z'/></g><g fill='none' stroke='rgba(0,0,0,.55)' stroke-width='1.1' transform='translate(1.3 1.5)'><path d='M18 96c6-34 30-54 62-58'/><path d='M86 154c-6-34 8-62 38-78' transform='rotate(-30 100 110)'/><path d='M104 36c20-14 44-14 56 4'/></g></svg>");
+  --arches:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='150'><g fill='none' stroke='rgba(240,201,104,.42)' stroke-width='2'><path d='M12 150V66a48 48 0 0 1 96 0v84'/><path d='M34 150V74a26 26 0 0 1 52 0v76'/></g><g fill='none' stroke='rgba(0,0,0,.18)' stroke-width='2' transform='translate(1.5 1.5)'><path d='M12 150V66a48 48 0 0 1 96 0v84'/></g></svg>");
+  --archesfaint:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='300'><g fill='none' stroke='rgba(194,97,60,.11)' stroke-width='2.5'><path d='M24 300V132a96 96 0 0 1 192 0v168'/><path d='M68 300V148a52 52 0 0 1 104 0v152'/></g></svg>"); --fs:'Cormorant Garamond',Georgia,serif; --fc:'Cinzel','Cormorant Garamond',Georgia,serif; --ft:'Mallanna','Noto Sans Telugu',sans-serif;
   --leaf:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><g fill='rgba(255,255,255,.07)' stroke='rgba(255,255,255,.3)' stroke-width='1.1'><path d='M18 96c6-34 30-54 62-58-6 34-30 54-62 58z'/><path d='M86 154c-6-34 8-62 38-78 6 34-8 62-38 78z' transform='rotate(-30 100 110)'/><path d='M104 36c20-14 44-14 56 4-20 14-44 14-56-4z'/></g><g fill='none' stroke='rgba(0,0,0,.24)' stroke-width='1.1' transform='translate(1.3 1.5)'><path d='M18 96c6-34 30-54 62-58'/><path d='M86 154c-6-34 8-62 38-78' transform='rotate(-30 100 110)'/><path d='M104 36c20-14 44-14 56 4'/><path d='M18 96c22-18 40-32 62-58' opacity='.5'/></g></svg>");
   --paper:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .12 0 0 0 .13 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
 }
@@ -31,10 +40,10 @@ html::-webkit-scrollbar{display:none}
 html.render{font-size:10px;overflow:hidden}
 html.render *,html.render *::before,html.render *::after{animation:none!important;transition:none!important}
 html.locked,html.locked body{overflow:hidden;height:100%}
-body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--fs);font-size:3.4rem;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:0;transition:opacity .6s}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--fb);font-size:3.4rem;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden;opacity:0;transition:opacity .6s}
 html.loaded body{opacity:1}
 [hidden]{display:none!important}
-main{width:108rem;margin:0 auto;position:relative;background:var(--paper),var(--cream);box-shadow:0 0 9rem rgba(0,0,0,.4)}
+main{width:108rem;margin:0 auto;position:relative;background:var(--cardpat),var(--paper),var(--cream);box-shadow:0 0 9rem rgba(0,0,0,.4)}
 html.render main{position:fixed;top:0;left:0;right:0;will-change:transform}
 section{height:100vh;height:100dvh;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;box-sizing:border-box;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:2.6rem;padding-block:12rem;padding-left:max(16px,env(safe-area-inset-left,0px),10rem);padding-right:max(16px,env(safe-area-inset-right,0px),10rem)}
 h1,h2,h3,p{margin:0;font-weight:400;text-wrap:balance}
@@ -47,31 +56,72 @@ p{max-width:84rem}
 .caps{font-family:var(--fc);font-size:3.3rem;letter-spacing:.1em;line-height:1.5}
 .small{font-size:2.9rem}
 .amp{font-family:var(--fd);font-size:7rem;color:var(--gold);line-height:1}
-.art{background:var(--gold-d);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;flex:none}
+.art{background:var(--artc);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;flex:none}
 .rule{width:52rem;height:3.6rem;--m:url(art/divider.png);opacity:.9}
-.btn{display:inline-flex;align-items:center;gap:1.4rem;background:var(--olive);color:var(--pearl);font-family:var(--fc);font-size:2.3rem;letter-spacing:.22em;text-transform:uppercase;padding:2.2rem 4.6rem;border-radius:999px;text-decoration:none;box-shadow:0 1rem 2.6rem rgba(50,40,20,.28);border:0;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:1.4rem;background:var(--btnbg);color:var(--btnfg);font-family:var(--fc);font-size:2.3rem;letter-spacing:.22em;text-transform:uppercase;padding:2.2rem 4.6rem;border-radius:var(--btnr);text-decoration:none;box-shadow:0 1rem 2.6rem rgba(50,40,20,.28);border:0;cursor:pointer}
 .btn svg{width:2.8rem;height:2.8rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .btn:focus-visible,#snd:focus-visible{outline:.4rem solid var(--gold);outline-offset:.3rem}
 html.js .rv{opacity:0;transform:translateY(3rem)}
 @media (prefers-reduced-motion:reduce){html.js .rv{transform:none!important}}
 
+/* themes: midnight gold, ivory sage, terracotta arch */
+html[data-theme=midnight]{--desk:#05070b;--cream:#0e1320;--cream-d:#151c2c;--ink:#efe4cf;--soft:#b9ab8f;--gold:#d4af6a;--gold-d:#d4af6a;--pearl:#f4ead6;--fc:'Montserrat','Jost',sans-serif;
+  --envbg:linear-gradient(135deg,#1b1f29,#0b0d13 50%,#15181f);--envpat:var(--leafgold);--envfg:#d4af6a;--seal1:#efd394;--seal2:#b8893d;--sealline:#f7e7bd;--sealink:#1a1407;--sealsub:#3b2d10;--cord:linear-gradient(90deg,#d4af6a,#f1dba3,#a37f3b);
+  --drape:repeating-linear-gradient(90deg,#161d2f 0 2.2rem,#0c111d 2.2rem 3.4rem,#1c2439 3.4rem 5.4rem,#161d2f 5.4rem 7rem);--dot:#f1dba3;--dot2:#8d7340;--val1:#1f2740;--val2:#0c111d;--valline:#d4af6a;--valpearl:#f1dba3;
+  --cardpat:radial-gradient(ellipse at 50% 0%,rgba(212,175,106,.18),transparent 60%);--artc:#d4af6a;--vinec:#d4af6a;--btnbg:#d4af6a;--btnfg:#0e1320;--btnr:999px;--tilebg:rgba(255,255,255,.04);--tileline:rgba(212,175,106,.55);--sc1:#8d7340;--sc2:#f1dba3;--sc3:#a37f3b;--sct:#1a1407}
+html[data-theme=midnight] .name{font-family:var(--fs);font-weight:300;font-style:italic;font-size:8.6rem;letter-spacing:.01em}
+html[data-theme=midnight] .script{font-family:var(--fs);font-style:italic;font-weight:300;font-size:6rem}
+html[data-theme=midnight] .amp{font-family:var(--fs);font-style:italic;font-weight:300}
+html[data-theme=midnight] .eyebrow,html[data-theme=midnight] .caps,html[data-theme=midnight] .tile span{font-weight:500;letter-spacing:.38em}
+html[data-theme=midnight] .caps{font-size:2.6rem}
+html[data-theme=midnight] .tile b{font-family:var(--fs);font-weight:300}
+html[data-theme=midnight] main{box-shadow:0 0 12rem rgba(212,175,106,.12)}
+
+html[data-theme=sage]{--desk:#cfd3c6;--cream:#fbf9f4;--cream-d:#f1efe7;--ink:#2b2b2b;--soft:#6f6f6a;--gold:#7d8c6e;--gold-d:#5e6b52;--pearl:#fff;--fb:'Jost','Montserrat',sans-serif;--fc:'Jost','Montserrat',sans-serif;
+  --envbg:linear-gradient(135deg,#bcc4ae,#a9b39b 50%,#9ba58e);--envfg:#2b2b2b;--seal1:#fff;--seal2:#f1efe7;--sealline:#7d8c6e;--sealink:#2b2b2b;--sealsub:#5e6b52;--cord:linear-gradient(90deg,#e8e4d8,#fff,#d6d1c3);
+  --drape:repeating-linear-gradient(90deg,#fff 0 2.6rem,#eeece3 2.6rem 3.4rem,#f9f7f1 3.4rem 6rem,#fff 6rem 7rem);--dot:#7d8c6e;--dot2:#c9d0bf;--val1:#fff;--val2:#e6e5db;--valline:#c9d0bf;--valpearl:#7d8c6e;
+  --artc:#5e6b52;--vinec:#7d8c6e;--btnbg:#2b2b2b;--btnfg:#fff;--btnr:.6rem;--tilebg:transparent;--tileline:#c9d0bf;--sc1:#dfe3d6;--sc2:#fff;--sc3:#c9d0bf;--sct:#5e6b52}
+html[data-theme=sage] body{font-weight:300;font-size:3.1rem}
+html[data-theme=sage] .name{font-family:var(--fs);font-weight:300;text-transform:uppercase;letter-spacing:.18em;font-size:5.6rem;line-height:1.15}
+html[data-theme=sage] .script{font-family:var(--fs);font-style:italic;font-weight:300;font-size:6rem}
+html[data-theme=sage] .amp{font-family:var(--fs);font-style:italic;font-weight:300;font-size:6rem}
+html[data-theme=sage] .ital{font-family:var(--fs);font-size:1.08em}
+html[data-theme=sage] .eyebrow{font-weight:400;letter-spacing:.4em;font-size:1.9rem}
+html[data-theme=sage] .caps{font-weight:400;letter-spacing:.24em;font-size:2.5rem}
+html[data-theme=sage] .tile b{font-family:var(--fs);font-weight:300}
+html[data-theme=sage] .tile{border-width:1px 0 0}
+html[data-theme=sage] .phone b{font-family:var(--fs);font-weight:400}
+html[data-theme=sage] .who p{font-size:2.7rem}
+
+html[data-theme=terra]{--desk:#4a2318;--cream:#f6e7d6;--cream-d:#efd9c2;--ink:#4a2418;--soft:#8a5a44;--gold:#c2613c;--gold-d:#9c4a2b;--pearl:#fff3e4;--fc:'Montserrat','Jost',sans-serif;
+  --envbg:linear-gradient(135deg,#cf7250,#b4573a 50%,#9c4a2b);--envpat:var(--arches);--envfg:#fff3e4;--seal1:#f3cf70;--seal2:#d9a441;--sealline:#fff3e4;--sealink:#4a2418;--sealsub:#6b3a22;--cord:linear-gradient(90deg,#d9a441,#f0c968,#b88426);
+  --drape:repeating-linear-gradient(90deg,#c2613c 0 3rem,#f6e7d6 3rem 4rem,#d9a441 4rem 7rem,#f6e7d6 7rem 8rem);--dot:#fff3e4;--dot2:#d9a441;--val1:#f3cf70;--val2:#d9a441;--valline:#9c4a2b;--valpearl:#fff3e4;
+  --cardpat:var(--archesfaint);--artc:#5a2e22;--vinec:#c2613c;--btnbg:#c2613c;--btnfg:#fff3e4;--btnr:1rem;--tilebg:#efd9c2;--tileline:#c2613c;--sc1:#d9a441;--sc2:#f6e7d6;--sc3:#c2613c;--sct:#4a2418}
+html[data-theme=terra] .name{font-family:'Playfair Display',var(--fs);font-weight:600;font-size:7.8rem;line-height:1.1}
+html[data-theme=terra] .script{font-family:'Playfair Display',var(--fs);font-style:italic;font-weight:400;font-size:6rem}
+html[data-theme=terra] .amp{font-family:'Playfair Display',var(--fs);font-style:italic;font-weight:400}
+html[data-theme=terra] .eyebrow,html[data-theme=terra] .caps,html[data-theme=terra] .tile span{font-weight:600;letter-spacing:.3em}
+html[data-theme=terra] .caps{font-size:2.6rem}
+html[data-theme=terra] .tile b{font-family:'Playfair Display',var(--fs);font-weight:600}
+html[data-theme=terra] .phone b{font-family:'Playfair Display',var(--fs);font-weight:600;letter-spacing:.06em}
+
 /* envelope */
 #env{position:fixed;inset:0;z-index:50;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
-#env .half{position:absolute;top:0;bottom:0;width:50%;background:var(--leaf),linear-gradient(135deg,var(--olive-l),var(--olive) 45%,var(--olive-d));box-shadow:inset 0 0 14rem rgba(0,0,0,.28)}
+#env .half{position:absolute;top:0;bottom:0;width:50%;background:var(--envpat),var(--envbg);box-shadow:inset 0 0 14rem rgba(0,0,0,.28)}
 #env .l{left:0}#env .r{right:0}
-#env .l::after{content:"";position:absolute;right:0;top:0;bottom:0;width:.7rem;background:linear-gradient(90deg,#c9ad70,#e9d4a3,#a88a4c);box-shadow:.2rem 0 1rem rgba(0,0,0,.35)}
+#env .l::after{content:"";position:absolute;right:0;top:0;bottom:0;width:.7rem;background:var(--cord);box-shadow:.2rem 0 1rem rgba(0,0,0,.35)}
 #env .r::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3rem;background:linear-gradient(90deg,rgba(0,0,0,.35),transparent)}
 #env .seal{position:absolute;left:50%;top:50%;width:34rem;height:auto;transform:translate(-50%,-50%);filter:drop-shadow(0 1.4rem 2.2rem rgba(0,0,0,.4));animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.035)}}
-#env .hint{position:absolute;left:0;right:0;bottom:calc(7rem + env(safe-area-inset-bottom,0px));text-align:center;color:var(--pearl);font-family:var(--fc);font-size:2rem;letter-spacing:.3em;opacity:.75}
+#env .hint{position:absolute;left:0;right:0;bottom:calc(7rem + env(safe-area-inset-bottom,0px));text-align:center;color:var(--envfg);font-family:var(--fc);font-size:2rem;letter-spacing:.3em;opacity:.75}
 
 /* hero + curtains */
 .hero{padding-top:24rem;padding-bottom:6rem;gap:1.2rem;overflow:hidden;justify-content:center}
 .cur{position:absolute;inset:0;z-index:5;pointer-events:none}
-.drape{position:absolute;top:0;bottom:0;width:51%;background:repeating-linear-gradient(90deg,var(--blush) 0 2.2rem,var(--blush-d) 2.2rem 3.4rem,var(--blush-l) 3.4rem 5.4rem,var(--blush) 5.4rem 7rem);box-shadow:inset 0 -12rem 10rem -8rem rgba(120,70,40,.18)}
+.drape{position:absolute;top:0;bottom:0;width:51%;background:var(--drape);box-shadow:inset 0 -12rem 10rem -8rem rgba(120,70,40,.18)}
 .drape.l{left:0;transform-origin:left center}
 .drape.r{right:0;transform-origin:right center}
-.drape::after{content:"";position:absolute;top:0;bottom:0;width:1.7rem;background:radial-gradient(circle,#fff 0 34%,#dcc9a8 36% 52%,transparent 56%) 0 0/1.7rem 1.7rem repeat-y}
+.drape::after{content:"";position:absolute;top:0;bottom:0;width:1.7rem;background:radial-gradient(circle,var(--dot) 0 34%,var(--dot2) 36% 52%,transparent 56%) 0 0/1.7rem 1.7rem repeat-y}
 .drape.l::after{right:0;box-shadow:-1rem 0 2.4rem rgba(90,50,20,.22)}
 .drape.r::after{left:0;box-shadow:1rem 0 2.4rem rgba(90,50,20,.22)}
 .valance{position:absolute;z-index:6;top:0;left:-10rem;right:-10rem;width:calc(100% + 20rem);height:auto;display:block;filter:drop-shadow(0 .8rem 1.4rem rgba(90,50,20,.22))}
@@ -87,7 +137,7 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 
 /* body of the card */
 .card{position:relative}
-.vine{position:absolute;top:0;bottom:0;width:7rem;background:var(--gold);-webkit-mask:var(--m) center top/6.4rem auto repeat-y;mask:var(--m) center top/6.4rem auto repeat-y;opacity:.45;pointer-events:none}
+.vine{position:absolute;top:0;bottom:0;width:7rem;background:var(--vinec);-webkit-mask:var(--m) center top/6.4rem auto repeat-y;mask:var(--m) center top/6.4rem auto repeat-y;opacity:.45;pointer-events:none}
 .vine.l{left:1.4rem;--m:url(art/rose_bl.png)}.vine.r{right:1.4rem;--m:url(art/rose_tr.png)}
 
 /* scratch heart */
@@ -97,7 +147,7 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 
 /* countdown */
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem;width:100%;max-width:84rem}
-.tile{border:1px solid var(--gold);background:var(--cream-d);padding:2.6rem 0 2rem;display:flex;flex-direction:column;gap:.6rem}
+.tile{border:1px solid var(--tileline);background:var(--tilebg);padding:2.6rem 0 2rem;display:flex;flex-direction:column;gap:.6rem}
 .tile b{font-family:var(--fc);font-weight:600;font-size:6rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
 .tile span{font-family:var(--fc);font-size:1.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d)}
 
@@ -115,7 +165,7 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 .phone .btn{padding:1.5rem 3rem;font-size:1.9rem}
 
 /* sound + fade */
-#snd{position:fixed;z-index:60;top:calc(2.4rem + env(safe-area-inset-top,0px));right:calc(50% - 54rem + 2.4rem);width:7.2rem;height:7.2rem;border-radius:50%;border:0;background:var(--olive);color:var(--pearl);box-shadow:0 .8rem 2rem rgba(0,0,0,.3);cursor:pointer;display:grid;place-items:center}
+#snd{position:fixed;z-index:60;top:calc(2.4rem + env(safe-area-inset-top,0px));right:calc(50% - 54rem + 2.4rem);width:7.2rem;height:7.2rem;border-radius:50%;border:0;background:var(--btnbg);color:var(--btnfg);box-shadow:0 .8rem 2rem rgba(0,0,0,.3);cursor:pointer;display:grid;place-items:center}
 #snd svg{width:3.4rem;height:3.4rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 #snd .on{display:block}#snd .mute{display:none}
 #snd.off .on{display:none}#snd.off .mute{display:block}
@@ -127,12 +177,12 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 <div id="env" role="button" tabindex="0" aria-label="Open the invitation">
   <div class="half l"></div><div class="half r"></div>
   <svg class="seal" viewBox="0 0 340 300" aria-hidden="true">
-    <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf1e2"/><stop offset="1" stop-color="#ecd9bd"/></linearGradient></defs>
-    <path d="M34 8 H306 L332 34 V266 L306 292 H34 L8 266 V34 Z" fill="url(#sg)" stroke="#b8975a" stroke-width="2"/>
-    <path d="M44 22 H296 L318 44 V256 L296 278 H44 L22 256 V44 Z" fill="none" stroke="#b8975a" stroke-width="1" stroke-dasharray="3 4"/>
-    <text x="170" y="150" text-anchor="middle" font-family="Great Vibes, cursive" font-size="86" fill="#4a3a2a">Y &amp; S</text>
-    <path d="M90 186 H250" stroke="#b8975a" stroke-width="1"/><path d="M170 180 l6 6 -6 6 -6 -6z" fill="#b8975a"/>
-    <text x="170" y="236" text-anchor="middle" font-family="Cinzel, serif" font-size="17" letter-spacing="5" fill="#8a6a3a">TAP TO OPEN</text>
+    <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--seal1)"/><stop offset="1" style="stop-color:var(--seal2)"/></linearGradient></defs>
+    <path d="M34 8 H306 L332 34 V266 L306 292 H34 L8 266 V34 Z" fill="url(#sg)" style="stroke:var(--sealline)" stroke-width="2"/>
+    <path d="M44 22 H296 L318 44 V256 L296 278 H44 L22 256 V44 Z" fill="none" style="stroke:var(--sealline)" stroke-width="1" stroke-dasharray="3 4"/>
+    <text x="170" y="150" text-anchor="middle" style="font-family:var(--fd);fill:var(--sealink)" font-size="86">Y &amp; S</text>
+    <path d="M90 186 H250" style="stroke:var(--sealline)" stroke-width="1"/><path d="M170 180 l6 6 -6 6 -6 -6z" style="fill:var(--sealline)"/>
+    <text x="170" y="236" text-anchor="middle" style="font-family:var(--fc);fill:var(--sealsub)" font-size="17" letter-spacing="5">TAP TO OPEN</text>
   </svg>
   <div class="hint">YASWANTH &amp; SANDHYA</div>
 </div>
@@ -145,11 +195,11 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 <main id="page">
   <section class="hero" id="hero">
     <svg class="valance" viewBox="0 0 1080 200" preserveAspectRatio="none" aria-hidden="true">
-      <defs><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbeadb"/><stop offset="1" stop-color="#e5bd9c"/></linearGradient></defs>
+      <defs><linearGradient id="vg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--val1)"/><stop offset="1" style="stop-color:var(--val2)"/></linearGradient></defs>
       <path d="M0 0 H1080 V62 Q900 180 720 62 Q540 180 360 62 Q180 180 0 62 Z" fill="url(#vg)"/>
-      <path d="M0 62 Q180 180 360 62 Q540 180 720 62 Q900 180 1080 62" fill="none" stroke="#c9a06a" stroke-width="2"/>
-      <path d="M0 74 Q180 192 360 74 Q540 192 720 74 Q900 192 1080 74" fill="none" stroke="#fff6e8" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 15"/>
-      <g stroke="#e5bd9c" stroke-width="1.5" opacity=".7"><path d="M60 0v50M120 0v62M180 0v70M240 0v62M300 0v50M420 0v50M480 0v62M540 0v70M600 0v62M660 0v50M780 0v50M840 0v62M900 0v70M960 0v62M1020 0v50"/></g>
+      <path d="M0 62 Q180 180 360 62 Q540 180 720 62 Q900 180 1080 62" fill="none" style="stroke:var(--valline)" stroke-width="2"/>
+      <path d="M0 74 Q180 192 360 74 Q540 192 720 74 Q900 192 1080 74" fill="none" style="stroke:var(--valpearl)" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 15"/>
+      <g style="stroke:var(--val2)" stroke-width="1.5" opacity=".7"><path d="M60 0v50M120 0v62M180 0v70M240 0v62M300 0v50M420 0v50M480 0v62M540 0v70M600 0v62M660 0v50M780 0v50M840 0v62M900 0v70M960 0v62M1020 0v50"/></g>
     </svg>
     <div class="cur" aria-hidden="true"><div class="drape l"></div><div class="drape r"></div></div>
     <p class="te rv" style="margin-top:2rem">శ్రీరస్తు శుభమస్తు</p>
@@ -263,18 +313,28 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
     </section>
   </div>
 </main>
-<audio id="song" src="song.mp3" loop preload="auto"></audio>
+<audio id="song" loop preload="auto"></audio>
 <div id="fade" aria-hidden="true"></div>
 
 <script>
 (() => {
 const Q = new URLSearchParams(location.search), RENDER = Q.has('render');
 const H = document.documentElement, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+// bpm: scene changes land on beats of each theme's song. start offsets for the videos live in build.sh; the mp3s are already cut
+const THEMES = {
+  royal:    { bpm: 107.7, song: 'song.mp3',          fonts: ['GreatVibes', 'Cormorant', 'CormorantI', 'Cinzel', 'Mallanna'] },
+  midnight: { bpm: 107.7,   song: 'song-midnight.mp3', fonts: ['GreatVibes', 'Cormorant', 'CormorantI', 'Montserrat', 'Mallanna'] },
+  sage:     { bpm: 136,   song: 'song-sage.mp3',     fonts: ['GreatVibes', 'Cormorant', 'CormorantI', 'Jost', 'Mallanna'] },
+  terra:    { bpm: 117.5,   song: 'song-terra.mp3',    fonts: ['GreatVibes', 'Playfair', 'PlayfairI', 'Montserrat', 'Cormorant', 'CormorantI', 'Mallanna'] },
+};
+const THEME = THEMES[Q.get('theme')] ? Q.get('theme') : 'royal', TH = THEMES[THEME];
+H.dataset.theme = THEME;
 H.classList.add('js'); if (RENDER) H.classList.add('render'); else H.classList.add('locked');
-const B = 60 / 107.7;                                   // one beat of the song
+const B = 60 / TH.bpm;                                  // one beat of the song
 const clamp = v => v < 0 ? 0 : v > 1 ? 1 : v, ease = p => p < .5 ? 2 * p * p : 1 - (2 - 2 * p) ** 2 / 2;
 const env = $('#env'), hl = $('#env .l'), hr = $('#env .r'), seal = $('#env .seal'), dl = $('.drape.l'), dr = $('.drape.r');
 const page = $('#page'), hero = $('#hero'), snd = $('#snd'), song = $('#song'), fade = $('#fade');
+song.src = TH.song;
 let heroP = 0;
 
 function setEnv(p, tap = 0) {
@@ -301,11 +361,12 @@ function cover() {
   const r = heart.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
   W = cv.width = Math.round(r.width * d); Hh = cv.height = Math.round(r.height * d);
   cx.globalCompositeOperation = 'source-over';
-  const g = cx.createLinearGradient(0, 0, W, Hh); g.addColorStop(0, '#e6c3a0'); g.addColorStop(.5, '#f8e6d4'); g.addColorStop(1, '#d6ab84');
+  const css = getComputedStyle(H), v = n => css.getPropertyValue(n).trim();
+  const g = cx.createLinearGradient(0, 0, W, Hh); g.addColorStop(0, v('--sc1')); g.addColorStop(.5, v('--sc2')); g.addColorStop(1, v('--sc3'));
   cx.fillStyle = g; cx.fillRect(0, 0, W, Hh);
   let s = 7; const rnd = () => (s = s * 16807 % 2147483647) / 2147483647;
   cx.fillStyle = 'rgba(255,250,240,.95)'; for (let i = 0; i < 160; i++) { cx.beginPath(); cx.arc(rnd() * W, rnd() * Hh, rnd() * 2 * d + .5, 0, 7); cx.fill(); }
-  cx.fillStyle = '#8a6a3a'; cx.font = `${Math.round(W * .07)}px Cinzel, serif`; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('SCRATCH ME', W / 2, Hh * .46);
+  cx.fillStyle = v('--sct'); cx.font = `${Math.round(W * .07)}px ${v('--fc')}`; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('SCRATCH ME', W / 2, Hh * .46);
   cx.globalCompositeOperation = 'destination-out'; cx.fillStyle = '#000'; cv.style.opacity = 1; cleared = false;
 }
 const erase = (x, y, r) => { cx.beginPath(); cx.arc(x, y, r, 0, 7); cx.fill(); };
@@ -350,31 +411,35 @@ addEventListener('scroll', () => requestAnimationFrame(update), { passive: true 
 addEventListener('resize', () => { if (!cleared && !RENDER) cover(); update(); });
 
 // video schedule: scene changes on beats of the song
-const HOLD = { hero: 15, welcome: 6, reveal: 8, count: 5, timeline: 8, venue: 5, compl: 5, rsvp: 5, close: 7 };
+const HOLD = { hero: 8.4, welcome: 3.3, reveal: 4.5, count: 2.8, timeline: 4.5, venue: 2.8, compl: 2.8, rsvp: 2.8, close: 3.9 };   // seconds, each snapped to whole beats
+const beats = sec => Math.max(1, Math.round(sec / B)) * B;
 let moves = [], arrive = {}, NOW0 = Math.floor(Date.now() / 36e5) * 36e5;
 function schedule() {
-  const vh = innerHeight, yMax = page.offsetHeight - vh; let t = 0, y0 = 0;
+  const vh = innerHeight, yMax = page.offsetHeight - vh, mv = beats(1.1); let t = 0, y0 = 0;
   for (const s of $$('section')) {
     const y = Math.min(s.getBoundingClientRect().top, yMax);
-    if (y0 !== y || t === 0 && s.id !== 'hero') { moves.push({ t0: t, t1: t + 2 * B, y0, y1: y }); t += 2 * B; y0 = y; }
-    arrive[s.id] = t; t += HOLD[s.id] * B;
+    if (y0 !== y || t === 0 && s.id !== 'hero') { moves.push({ t0: t, t1: t + mv, y0, y1: y }); t += mv; y0 = y; }
+    arrive[s.id] = t; t += beats(HOLD[s.id]);
   }
   window.DUR = t; window.EV = Object.entries(arrive).map(([name, t]) => ({ name, t }));
 }
 function scrollAt(t) { let y = 0; for (const m of moves) { if (t < m.t0) return y; if (t < m.t1) return m.y0 + (m.y1 - m.y0) * ease((t - m.t0) / (m.t1 - m.t0)); y = m.y1; } return y; }
 window.render = t => {
-  setEnv(ease(clamp((t - 3 * B) / (2 * B))), clamp((t - 2 * B) / B));
-  const c = clamp((t - 4.5 * B) / (3 * B)); setCurtain(c); heroP = ease(clamp((c - .35) / .65));
+  setEnv(ease(clamp((t - beats(1.7)) / beats(1.1))), clamp((t - beats(1.1)) / beats(.55)));
+  const c = clamp((t - beats(2.5)) / beats(1.7)); setCurtain(c); heroP = ease(clamp((c - .35) / .65));
   curY = scrollAt(t); page.style.transform = `translate3d(0,${-curY}px,0)`; chev.style.transform = `translateY(${.45 - .45 * Math.cos(t * 2 * Math.PI / 1.6)}rem)`; update();
-  setScratch(clamp((t - arrive.reveal - 1.5 * B) / (3 * B)));
+  setScratch(clamp((t - arrive.reveal - beats(.8)) / beats(1.7)));
   setCount(NOW0 + t * 1000);
-  snd.hidden = t < 5 * B; snd.classList.toggle('off', false);
+  snd.hidden = t < beats(2.8); snd.classList.toggle('off', false);
   fade.style.opacity = Math.max(clamp(1 - t / .5), clamp((t - (window.DUR - 1)) / 1));
 };
 
 // fonts and art, retried; then first paint
 const wait = ms => new Promise(r => setTimeout(r, ms)), retry = (fn, n = 5) => fn().catch(e => n > 1 ? wait(400).then(() => retry(fn, n - 1)) : Promise.reject(e));
-const FONTS = [['Great Vibes', 'fonts/GreatVibes.ttf', {}], ['Cormorant Garamond', 'fonts/CormorantGaramond.ttf', { weight: '300 700' }], ['Cormorant Garamond', 'fonts/CormorantGaramond-Italic.ttf', { weight: '300 700', style: 'italic' }], ['Cinzel', 'fonts/Cinzel.ttf', { weight: '400 900' }], ['Mallanna', 'fonts/Mallanna.ttf', {}]];
+const FONTFILES = { GreatVibes: ['Great Vibes', 'fonts/GreatVibes.ttf', {}], Cormorant: ['Cormorant Garamond', 'fonts/CormorantGaramond.ttf', { weight: '300 700' }], CormorantI: ['Cormorant Garamond', 'fonts/CormorantGaramond-Italic.ttf', { weight: '300 700', style: 'italic' }],
+  Cinzel: ['Cinzel', 'fonts/Cinzel.ttf', { weight: '400 900' }], Mallanna: ['Mallanna', 'fonts/Mallanna.ttf', {}], Montserrat: ['Montserrat', 'fonts/Montserrat.ttf', { weight: '100 900' }], Jost: ['Jost', 'fonts/Jost.ttf', { weight: '100 900' }],
+  Playfair: ['Playfair Display', 'fonts/PlayfairDisplay.ttf', { weight: '400 900' }], PlayfairI: ['Playfair Display', 'fonts/PlayfairDisplay-Italic.ttf', { weight: '400 900', style: 'italic' }] };
+const FONTS = TH.fonts.map(k => FONTFILES[k]);
 const ARTS = ['ganesha', 'couple', 'hands', 'bottu', 'kalasam', 'divider', 'rose_tr', 'rose_bl'];
 const loadFont = ([f, u, d]) => retry(() => new FontFace(f, `url(${u})`, d).load().then(x => document.fonts.add(x)));
 const loadArt = n => retry(() => new Promise((ok, bad) => { const i = new Image(); i.onload = ok; i.onerror = bad; i.src = 'art/' + n + '.png'; }));

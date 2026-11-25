@@ -69,6 +69,9 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
 .hero .roses{position:absolute;bottom:3rem;width:11rem;height:18rem;opacity:.85}
 .hero .roses.tr{right:3rem;--m:url(art/rose_tr.png)}
 .hero .roses.bl{left:3rem;--m:url(art/rose_bl.png)}
+.scroll{position:absolute;left:0;right:0;bottom:2.6rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:.4rem;font-family:var(--fc);font-size:1.9rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);pointer-events:none}
+.scroll svg{width:3.4rem;height:3.4rem;fill:none;stroke:var(--gold-d);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(.9rem)}}
 .who{display:flex;flex-direction:column;align-items:center;gap:.6rem}
 .who .eyebrow{font-size:2rem}
 .who p{font-size:3rem;line-height:1.4}
@@ -160,6 +163,7 @@ html.js .rv{opacity:0;transform:translateY(3rem)}
     </div>
     <div class="art rv" style="--m:url(art/couple.png);width:30rem;height:36rem;margin-top:1rem"></div>
     <div class="art roses tr"></div><div class="art roses bl"></div>
+    <div class="scroll" id="scroll"><span>Scroll for details</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
   </section>
 
   <div class="card">
@@ -271,9 +275,10 @@ function setEnv(p, tap = 0) {
 }
 function setCurtain(p) { const k = 1 - .9 * ease(p); dl.style.transform = `scaleX(${k})`; dr.style.transform = `scaleX(${k})`; }
 
-const RV = $$('.rv');
+const RV = $$('.rv'), scrollHint = $('#scroll'), chev = scrollHint.querySelector('svg'); let curY = 0;
 function update() {
-  const vh = innerHeight;
+  const vh = innerHeight, y = RENDER ? curY : scrollY;
+  scrollHint.style.opacity = heroP * clamp(1 - y / (vh * .12));
   for (const el of RV) {
     const r = el.getBoundingClientRect();
     let p = ease(clamp((vh * .9 - r.top) / (vh * .22))); if (hero.contains(el)) p *= heroP;
@@ -351,7 +356,7 @@ function scrollAt(t) { let y = 0; for (const m of moves) { if (t < m.t0) return 
 window.render = t => {
   setEnv(ease(clamp((t - 3 * B) / (2 * B))), clamp((t - 2 * B) / B));
   const c = clamp((t - 4.5 * B) / (3 * B)); setCurtain(c); heroP = ease(clamp((c - .35) / .65));
-  page.style.transform = `translate3d(0,${-scrollAt(t)}px,0)`; update();
+  curY = scrollAt(t); page.style.transform = `translate3d(0,${-curY}px,0)`; chev.style.transform = `translateY(${.45 - .45 * Math.cos(t * 2 * Math.PI / 1.6)}rem)`; update();
   setScratch(clamp((t - arrive.reveal - 1.5 * B) / (3 * B)));
   setCount(NOW0 + t * 1000);
   snd.hidden = t < 5 * B; snd.classList.toggle('off', false);
